@@ -1,0 +1,81 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body{
+	font-family: Lato;
+	position:relative;
+}
+.top{
+	background: url("./../img/background.png") #444;
+	width: 100%;
+	padding-top: 10px;
+}
+#welcome,#filmo{
+	margin-top: 50px;
+}
+.intro{
+	padding: 0 50px;
+}
+section{
+	padding-top: 20px;
+}
+/** la filmographie */
+.vertical-text {
+	transform: rotate(-90deg);
+	text-align: left;
+	font-size: 60px;
+	
+}
+.year{
+	height: 230px;
+	padding-top: 60px;
+}
+.poster img{
+	max-width: 100%;
+}
+.rate{
+	margin-top: 20px;
+}
+.footer{
+	text-align: center;
+	margin-top: 50px;
+	line-height: 30px;
+	background: #222;	
+	color: #fff;
+	width: 100%;	
+}
+.footer p{
+	margin: 0;
+}
+.main{
+	position: relative;
+}
+.main a{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.main .intro{
+	width: 70%;
+}
+#home_slideshow{
+	border-radius: 5px;
+	box-shadow: 0px 10px 10px black;
+	max-width: 800px;
+	height: 400px;
+	margin:0 auto;
+	overflow: hidden;
+}
+span.biggest,.title{
+	font-family: Averia;
+}
+.title{
+	font-size: 80px;
+	text-align: center;
+}
+#filmo .title{
+	font-size: 30px;
+	text-align: left;
+}
