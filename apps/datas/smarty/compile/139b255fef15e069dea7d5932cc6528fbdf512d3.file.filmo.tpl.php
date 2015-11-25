@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-20 09:32:08
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-25 16:25:34
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2002956459745517347-89253987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448008324,
+      1 => 1448464487,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448006298,
+      1 => 1448465129,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_56459745624c33_44390675',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56459745624c33_44390675')) {function content_56459745624c33_44390675($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_56459745624c33_44390675')) {function content_56459745624c33_44390675($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\dev.fande.fr\\apps\\libs\\smarty\\plugins\\modifier.truncate.php';
+?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -61,6 +62,8 @@ filmo">Filmographie</a></li>
 biblio">Bibliographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
+					<li><a href="<?php echo @constant('ROOT');?>
+login">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -82,15 +85,22 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 		<div class="poster col-lg-4">
 			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
-			<p class="rate"> * * * * [4/5]</p>
+			<p class="rate"> <?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['film']->value['rates']+1 - (1) : 1-($_smarty_tpl->tpl_vars['film']->value['rates'])+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>*
+			<?php }} ?>[<?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
+/5]</p>
 		</div>
 		<div class="infos col-lg-7">
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
 </p>
 			<p class="description">
-			<span class="show"><?php echo $_smarty_tpl->tpl_vars['film']->value['shortdesc'];?>
-<span class="click btn">...</span>
-			<span class="hidden otherText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span></span>
+			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'');?>
+<span>
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
+</span>
+			<span class="click btn">...</span>
 			</p>
 		</div>
 	</section>

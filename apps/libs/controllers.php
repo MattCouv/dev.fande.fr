@@ -29,6 +29,13 @@ function filmo_action(){
 	//Affichage
 	$smarty->display('filmo.tpl');
 }
+
+//affiche le page de login de l'admin
+function login_action(){
+	global $smarty,$fpdo;
+	//affichage
+	$smarty->display('login.tpl');
+}
 //remove film from database
 function deletefilm_action($id){
 	global $smarty, $fpdo;

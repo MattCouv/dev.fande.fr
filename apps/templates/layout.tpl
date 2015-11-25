@@ -29,6 +29,7 @@
 					<li><a href="{$smarty.const.ROOT}filmo">Filmographie</a></li>
 					<li><a href="{$smarty.const.ROOT}biblio">Bibliographie</a></li>
 					<li><a href="{$smarty.const.ROOT}quizz">Le QUIZZ</a></li>
+					<li><a href="{$smarty.const.ROOT}admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>

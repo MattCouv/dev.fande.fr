@@ -10,13 +10,15 @@
 		</div>
 		<div class="poster col-lg-4">
 			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
-			<p class="rate"> * * * * [4/5]</p>
+			<p class="rate"> {for $i=1 to $film.rates}*
+			{/for}[{$film.rates}/5]</p>
 		</div>
 		<div class="infos col-lg-7">
 			<p class="title">{$film.title}</p>
 			<p class="description">
-			<span class="show">{$film.shortdesc}<span class="click btn">...</span>
-			<span class="hidden otherText">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span></span>
+			<span class="show cat70">{$film.shortdesc|truncate:70:""}<span>
+			<span class="hidden fullDesc">{$film.shortdesc|substr:70:500}</span>
+			<span class="click btn">...</span>
 			</p>
 		</div>
 	</section>

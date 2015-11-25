@@ -18,7 +18,11 @@ elseif ('filmo' == $command){
 	//afficher un billet
 	filmo_action();
 }
-
+//affiche la page de login de l'admin
+elseif ('admin-login' == $command){
+	//afficher un billet
+	login_action();
+}
 
 //== ajouter un billet =====================================
 elseif ('add-post' == $command){
