@@ -25,10 +25,9 @@ $pdo = new PDO(
  DB_USER, // utilisateur MYSQL
  DB_PASSWORD // mot de passe MYSQL
 );
-$fpdo = new FluentPDO($pdo);
-//$fpdo = new FluentPDO($pdo); << en commentaire pour le début du TD
+$fpdo = new FluentPDO($pdo); //<< en commentaire pour le début du TD
 // echanges en UTF8 entre PHP et MySQL
-$pdo->query("SET NAMES '" . DB_CHARSET . "'");
+//$pdo->query("SET NAMES '" . DB_CHARSET . "'");
 // objet SMARTY : variable globale $smarty
 $smarty = new Smarty();
 $smarty->template_dir = 'apps/templates/';

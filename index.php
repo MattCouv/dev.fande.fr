@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $uri = isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] :  $_SERVER['REQUEST_URI'];
 //charge et initiale les bibliotheques globales
@@ -7,7 +7,7 @@ include( 'setting.inc.php');
 //route de la requete interne
 $command = get_command();
 
-//== afficher la page d'acceuil de Fan de 
+//== afficher la page d'acceuil de Fan de
 if (''==$command){
 	//afficher les billets
 	home_action();
