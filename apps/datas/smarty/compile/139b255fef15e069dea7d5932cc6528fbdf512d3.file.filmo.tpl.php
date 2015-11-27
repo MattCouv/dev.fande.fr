@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-25 16:25:34
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:22:26
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2002956459745517347-89253987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448464487,
+      1 => 1448608938,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448465129,
+      1 => 1448465188,
       2 => 'file',
     ),
   ),
@@ -63,7 +63,7 @@ biblio">Bibliographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
-login">Login</a></li>
+admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -97,13 +97,14 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 </p>
 			<p class="description">
 			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'');?>
-<span>
+</span>
 			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
 </span>
 			<span class="click btn">...</span>
 			</p>
 		</div>
 	</section>
+	</hr>
 <?php } ?>
 </div>
 
