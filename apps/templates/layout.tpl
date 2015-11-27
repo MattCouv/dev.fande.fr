@@ -48,6 +48,6 @@
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-  
+
 </body>
 </html>

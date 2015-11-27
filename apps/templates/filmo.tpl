@@ -16,14 +16,13 @@
 		<div class="infos col-lg-7">
 			<p class="title">{$film.title}</p>
 			<p class="description">
-			<span class="show cat70">{$film.shortdesc|truncate:70:""}</span>
-			<span class="hidden fullDesc">{$film.shortdesc|substr:70:500}</span>
+			<span class="show cat70">{$film.shortdesc|truncate:70}</span>
+			<span class="hidden fullDesc">{$film.shortdesc|substr:71:500}</span>
 			<span class="click btn">...</span>
 			</p>
 		</div>
 	</section>
-	</hr>
-{/foreach}
+	{/foreach}
 </div>
 
 {/block}

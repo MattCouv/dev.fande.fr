@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:22:26
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:53:20
          compiled from "apps\templates\filmo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2002956459745517347-89253987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448608938,
+      1 => 1448610798,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448465188,
+      1 => 1448609133,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2002956459745517347-89253987',
+  'nocache_hash' => '2262456580bad71f2f7-36941646',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_56459745624c33_44390675',
+  'unifunc' => 'content_56580bad7eb6b6_32790075',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56459745624c33_44390675')) {function content_56459745624c33_44390675($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\dev.fande.fr\\apps\\libs\\smarty\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_56580bad7eb6b6_32790075')) {function content_56580bad7eb6b6_32790075($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\dev.fande.fr\\apps\\libs\\smarty\\plugins\\modifier.truncate.php';
 ?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
@@ -96,16 +96,15 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
 </p>
 			<p class="description">
-			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'');?>
+			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70);?>
 </span>
-			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],71,500);?>
 </span>
 			<span class="click btn">...</span>
 			</p>
 		</div>
 	</section>
-	</hr>
-<?php } ?>
+	<?php } ?>
 </div>
 
 
@@ -121,6 +120,6 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-  
+
 </body>
 </html><?php }} ?>

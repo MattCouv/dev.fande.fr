@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:21:49
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:51:02
          compiled from "apps\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1238156260c3beba9b5-20455815%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448465188,
+      1 => 1448609133,
       2 => 'file',
     ),
   ),
@@ -112,6 +112,6 @@ admin-login">Login</a></li>
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-  
+
 </body>
 </html><?php }} ?>
