@@ -38,7 +38,7 @@
   {block name=body}{/block}
 
 
-	<div class="footer center-block">
+	<div class="footer">
 		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
 	</div>
 
@@ -46,6 +46,9 @@
 
   <!-- @@@ JS -->
 <script src="assets/js/vendor/jquery.js"></script>
+<script src="assets/js/vendor/transition.js"></script>
+<script src="assets/js/vendor/collapse.js"></script>
+<script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 

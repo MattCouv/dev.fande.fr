@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-27 08:53:20
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 13:08:56
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448610798,
+      1 => 1448710881,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448609133,
+      1 => 1448712464,
       2 => 'file',
     ),
   ),
@@ -78,11 +78,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['film']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['film']->_loop = true;
 ?>
 	<section class="film row">
-		<div class="year col-lg-1">
-			<p class="vertical-text"><?php echo $_smarty_tpl->tpl_vars['film']->value['year'];?>
-</p>
+		<div class="year col-xs-1">
+			<p ><h1 class="vertical-text"><?php echo $_smarty_tpl->tpl_vars['film']->value['year'];?>
+</h1></p>
 		</div>
-		<div class="poster col-lg-4">
+		<div class="poster col-xs-4">
 			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
 			<p class="rate"> <?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['film']->value['rates']+1 - (1) : 1-($_smarty_tpl->tpl_vars['film']->value['rates'])+1)/abs($_smarty_tpl->tpl_vars['i']->step));
@@ -92,7 +92,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			<?php }} ?>[<?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
 /5]</p>
 		</div>
-		<div class="infos col-lg-7">
+		<div class="infos col-xs-7">
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
 </p>
 			<p class="description">
@@ -110,7 +110,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 
 
 
-	<div class="footer center-block">
+	<div class="footer">
 		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
 	</div>
 
@@ -118,6 +118,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 
   <!-- @@@ JS -->
 <script src="assets/js/vendor/jquery.js"></script>
+<script src="assets/js/vendor/transition.js"></script>
+<script src="assets/js/vendor/collapse.js"></script>
+<script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 

@@ -25,8 +25,7 @@ section{
 .vertical-text {
 	transform: rotate(-90deg);
 	text-align: left;
-	font-size: 60px;
-	
+	margin-left: 10px;
 }
 .year{
 	height: 230px;
