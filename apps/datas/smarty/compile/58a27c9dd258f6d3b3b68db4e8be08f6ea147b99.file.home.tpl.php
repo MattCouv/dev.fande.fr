@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 13:07:51
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 15:25:48
          compiled from "apps\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1238156260c3beba9b5-20455815%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58a27c9dd258f6d3b3b68db4e8be08f6ea147b99' => 
     array (
       0 => 'apps\\templates\\home.tpl',
-      1 => 1448393712,
+      1 => 1448720747,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448712464,
+      1 => 1448720721,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  <title>Fan de Home</title>
+	  <title>Martin SCORSESE</title>
 	  <meta name="viewport" content="initial-scale=1.0">
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -45,6 +45,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="wraper">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -89,7 +90,7 @@ admin-login">Login</a></li>
 					<img src="assets/img/films/ragingbull.jpg" alt="Raging Bull - 1980 -" />
 				</div>
 			</div>
-			<p class="title">fan de ... <span class="biggest">Martin SCORSESE</span></p>
+			<p class="title">Fan de ... <span class="biggest">Martin SCORSESE</span></p>
 		</div>
 		<div class="main">
 		</hr>
@@ -107,7 +108,7 @@ admin-login">Login</a></li>
 	</div>
 
 
-
+</div>
   <!-- @@@ JS -->
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/vendor/transition.js"></script>

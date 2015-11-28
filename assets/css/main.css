@@ -3,12 +3,19 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+html, body, .wraper{
+	height: 100%;
+	margin: 0;
+}
+.wraper{
+	position: relative;
+}
 body{
 	font-family: Lato;
 	position:relative;
 }
 .top{
-	background: url("./../img/background.png") #444;
+	background: url("https://newevolutiondesigns.com/images/freebies/google-material-design-wallpaper-2.jpg") #444;/**./../img/background.png**/
 	width: 100%;
 	padding-top: 10px;
 }
@@ -18,8 +25,10 @@ body{
 .intro{
 	padding: 0 50px;
 }
-section{
+.film{
 	padding-top: 20px;
+	margin-top: 10px;
+	max-height: 500px;
 }
 /** la filmographie */
 .vertical-text {
@@ -28,8 +37,9 @@ section{
 	margin-left: 10px;
 }
 .year{
-	height: 230px;
+	height: 100%;
 	padding-top: 60px;
+	background: pink;
 }
 .poster img{
 	max-width: 100%;
@@ -38,18 +48,20 @@ section{
 	margin-top: 20px;
 }
 .footer{
+	position: absolute;
+	bottom: 0px;
 	text-align: center;
-	margin-top: 50px;
+	height: 80px;
 	line-height: 30px;
-	background: #222;	
+	background: #222;
 	color: #fff;
-	width: 100%;	
+	width: 100%;
 }
-.footer p{
-	margin: 0;
-}
+
 .main{
 	position: relative;
+	margin:0 auto;
+	max-width: 1024px;
 }
 .main a{
 	position: absolute;
@@ -61,7 +73,7 @@ section{
 }
 #home_slideshow{
 	border-radius: 5px;
-	box-shadow: 0px 10px 10px black;
+	box-shadow: 0px 5px 10px black;
 	max-width: 800px;
 	height: 400px;
 	margin:0 auto;
@@ -70,6 +82,9 @@ section{
 span.biggest,.title{
 	font-family: Averia;
 }
+.biggest{
+	color: #fff;
+}
 .title{
 	font-size: 80px;
 	text-align: center;
@@ -77,4 +92,10 @@ span.biggest,.title{
 #filmo .title{
 	font-size: 30px;
 	text-align: left;
+}
+#filmo hr{
+	size: 80%;
+}
+.description{
+	width: 80%;
 }

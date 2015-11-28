@@ -18,6 +18,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="wraper">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -43,7 +44,7 @@
 	</div>
 
 
-
+</div>
   <!-- @@@ JS -->
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/vendor/transition.js"></script>

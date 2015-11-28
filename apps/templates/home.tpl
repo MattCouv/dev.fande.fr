@@ -1,5 +1,5 @@
 {extends file="layout.tpl"}
-{block name=title}Fan de Home{/block}
+{block name=title}Martin SCORSESE{/block}
 {block name=body}
 
 	<div id="welcome">
@@ -21,7 +21,7 @@
 					<img src="assets/img/films/ragingbull.jpg" alt="Raging Bull - 1980 -" />
 				</div>
 			</div>
-			<p class="title">fan de ... <span class="biggest">Martin SCORSESE</span></p>
+			<p class="title">Fan de ... <span class="biggest">Martin SCORSESE</span></p>
 		</div>
 		<div class="main">
 		</hr>

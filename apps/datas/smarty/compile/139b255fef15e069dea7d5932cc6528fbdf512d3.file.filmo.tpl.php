@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 13:08:56
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 15:16:20
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448710881,
+      1 => 1448719293,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448712464,
+      1 => 1448719689,
       2 => 'file',
     ),
   ),
@@ -46,6 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="wraper">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -78,11 +79,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['film']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['film']->_loop = true;
 ?>
 	<section class="film row">
-		<div class="year col-xs-1">
+		<div class="year col-xs-2 col-md-1">
 			<p ><h1 class="vertical-text"><?php echo $_smarty_tpl->tpl_vars['film']->value['year'];?>
 </h1></p>
 		</div>
-		<div class="poster col-xs-4">
+		<div class="poster col-xs-10 col-md-5">
 			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
 			<p class="rate"> <?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['film']->value['rates']+1 - (1) : 1-($_smarty_tpl->tpl_vars['film']->value['rates'])+1)/abs($_smarty_tpl->tpl_vars['i']->step));
@@ -92,15 +93,16 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			<?php }} ?>[<?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
 /5]</p>
 		</div>
-		<div class="infos col-xs-7">
+		<div class="infos col-xs-12 col-md-6">
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
 </p>
+			<hr>
 			<p class="description">
-			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70);?>
-</span>
+			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'',true);?>
+
 			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],71,500);?>
 </span>
-			<span class="click btn">...</span>
+			<span class="click btn btn-default btn-xs">...</span></span>
 			</p>
 		</div>
 	</section>
@@ -115,7 +117,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 	</div>
 
 
-
+</div>
   <!-- @@@ JS -->
 <script src="assets/js/vendor/jquery.js"></script>
 <script src="assets/js/vendor/transition.js"></script>
