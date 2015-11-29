@@ -3,8 +3,28 @@
 {block name=body}
 
 <div id="filmo">
+{if isset( $smarty.session.admin ) && $smarty.session.admin}
+<div class="adminEdit"><a href="{$smarty.const.ROOT}add-film" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un film</div>
+{/if}
 {foreach from=$films item=film}
-	<section class="film row">
+<hr>
+	<section class="film">
+	{if isset( $smarty.session.admin ) && $smarty.session.admin}
+		<div class="adminEdit container-fluid">
+		<form action="" method="get">
+		<input type="hidden" name="id" value="{$film.id}">
+		<table>
+			<tbody>
+				<tr>
+					<td><button type="submit" formaction="delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
+					<td><button type="submit" formaction="edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		</div>
+	{/if}
+		<div class="row">
 		<div class="year col-xs-2 col-md-1">
 			<p ><h1 class="vertical-text">{$film.year}</h1></p>
 		</div>
@@ -18,11 +38,13 @@
 			<hr>
 			<p class="description">
 			<span class="show cat70">{$film.shortdesc|truncate:70:"":true}
-			<span class="hidden fullDesc">{$film.shortdesc|substr:71:500}</span>
+			<span class="hidden fullDesc">{$film.shortdesc|substr:80:500}</span>
 			<span class="click btn btn-default btn-xs">...</span></span>
 			</p>
 		</div>
+	</div>
 	</section>
+
 	{/foreach}
 </div>
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 // constantes globale
 include ('config.inc.php');
 // charge et initialise les bibliothèques
@@ -16,6 +17,8 @@ include ('apps/libs/controllers.php');
 //intégrées dans la partie Application2 du TD.
 include ('apps/models/base.class.php');
 include ('apps/models/movie.class.php');
+include ('apps/models/parameter.class.php');
+
 //include ('apps/models/post.class.php');
 //include ('apps/models/user.class.php');
 
@@ -25,7 +28,7 @@ $pdo = new PDO(
  DB_USER, // utilisateur MYSQL
  DB_PASSWORD // mot de passe MYSQL
 );
-$fpdo = new FluentPDO($pdo); //<< en commentaire pour le début du TD
+$fpdo = new FluentPDO($pdo);
 // echanges en UTF8 entre PHP et MySQL
 //$pdo->query("SET NAMES '" . DB_CHARSET . "'");
 // objet SMARTY : variable globale $smarty

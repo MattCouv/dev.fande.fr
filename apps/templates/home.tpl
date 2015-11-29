@@ -28,7 +28,7 @@
 			<p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus blandit arcu a sagittis. Suspendisse nisi erat, accumsan vel mattis non, rhoncus sit amet turpis. Vestibulum erat arcu, porta eget cursus eu, posuere congue elit. Fusce dolor diam, luctus non molestie quis, maximus a sapien. Nullam felis neque, sodales in vulputate at, accumsan et nulla. Maecenas accumsan rhoncus orci, euismod efficitur tortor lacinia sed. Etiam risus quam, pellentesque vitae eros eu, malesuada congue tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed dignissim molestie ex, in mollis velit elementum vel. Pellentesque pellentesque dolor ac arcu porttitor auctor. Nulla a enim ut nulla condimentum rhoncus consectetur vitae nisi. Sed in semper nisi. Nullam quis diam ligula. Nam mollis dictum eros id pharetra.
 			</p>
 			<a class="btn btn-primary btn-lg discover">Découvrir ...</a>
-		</div>		
+		</div>
 	</div>
 
 {/block}

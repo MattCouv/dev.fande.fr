@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-28 15:16:20
+<?php /* Smarty version Smarty-3.1.18, created on 2015-11-29 22:54:27
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448719293,
+      1 => 1448833001,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448719689,
+      1 => 1448817256,
       2 => 'file',
     ),
   ),
@@ -63,8 +63,21 @@ filmo">Filmographie</a></li>
 biblio">Bibliographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
+					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+						<li><a href="<?php echo @constant('ROOT');?>
+logout">
+							<div class="icon-lock" style="float: left">
+							    <div class="lock-top-1" style="background-color: #E5E9EA"></div>
+							    <div class="lock-top-2"></div>
+							    <div class="lock-body" style="background-color: #E5E9EA"></div>
+							    <div class="lock-hole"></div>
+	  						</div>
+  						</a></li>
+					<?php } else { ?>
 					<li><a href="<?php echo @constant('ROOT');?>
 admin-login">Login</a></li>
+					<?php }?>
+
 				</ul>
 			</div>
 		</div>
@@ -73,12 +86,34 @@ admin-login">Login</a></li>
   
 
 <div id="filmo">
+<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+<div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
+add-film" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un film</div>
+<?php }?>
 <?php  $_smarty_tpl->tpl_vars['film'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['film']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['films']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['film']->key => $_smarty_tpl->tpl_vars['film']->value) {
 $_smarty_tpl->tpl_vars['film']->_loop = true;
 ?>
-	<section class="film row">
+<hr>
+	<section class="film">
+	<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+		<div class="adminEdit container-fluid">
+		<form action="" method="get">
+		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+">
+		<table>
+			<tbody>
+				<tr>
+					<td><button type="submit" formaction="delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
+					<td><button  class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		</div>
+	<?php }?>
+		<div class="row">
 		<div class="year col-xs-2 col-md-1">
 			<p ><h1 class="vertical-text"><?php echo $_smarty_tpl->tpl_vars['film']->value['year'];?>
 </h1></p>
@@ -100,12 +135,14 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			<p class="description">
 			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'',true);?>
 
-			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],71,500);?>
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],80,500);?>
 </span>
 			<span class="click btn btn-default btn-xs">...</span></span>
 			</p>
 		</div>
+	</div>
 	</section>
+
 	<?php } ?>
 </div>
 

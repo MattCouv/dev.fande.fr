@@ -13,7 +13,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_PERSISTANT', true);
 
 /** Préfixe de base de données pour les tables.*/
-define('TABLE_PREFIX', '');
+define('TABLE_PREFIX', 'fande_');
 
 /** indique si le débuguage est activé */
 define('DEBUG'			, true);

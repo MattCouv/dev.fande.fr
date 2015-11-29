@@ -1,7 +1,7 @@
 <?php
 	class Parameter extends Base{
 		// table associée
-		public $table = 'fande_parameters';
+		public $table = TABLE_PREFIX.'parameters';
 		/**
 	* Retourne les informations sur un paramètre.
 	* param string $param le paramètre

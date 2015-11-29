@@ -24,7 +24,7 @@ var aslider = {
             currentSlider.setAttribute('style', (style)?style+';position:relative':'position:relative');
 
             // Perform any slider specific setup for the current slider:
-            
+
             // Hide the mute control?
             if (! currentSlider.hasAttribute('data-hide-mute') &&
                     ! currentSlider.hasAttribute('data-hide-controls')) {
@@ -58,7 +58,7 @@ var aslider = {
                 pauseButton.appendChild(pauseIcon);
                 currentSlider.appendChild(pauseButton);
             }
-            
+
             // End slider specific setup.
 
             // Initialise each slide of the current slider
