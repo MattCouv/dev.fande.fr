@@ -57,32 +57,37 @@ elseif ('logout'==$command) {
 	redirect('');
 }
 //afficher la page d'ajout de film
-elseif ('add-film'==$command) {
+elseif ('add-film'==$command && $_SESSION['admin']) {
 	addfilm_action();
 }
 
 //== ajouter un film =====================================
-elseif('add-film-save'==$command){
+elseif('manage-film-save'==$command){
 	//sauvegarder le film
-	addfilmsave_action();
-	redirect('filmo');
+	if ($_POST['id']=="") {
+		addfilmsave_action($_POST, $_FILES);
+		redirect('filmo');
+	}else{
+		editfilmsave_action();
+		redirect('filmo');
+	}
+}
+
+// edition d'un film existant
+elseif ( 'edit-film' == $command && isset( $_POST['id'] ) && $_SESSION['admin'])
+{
+ 	editfilm_action( (int) $_POST['id'] );
 }
 //== affiche page qui confirme la deletion  ===========================================
-elseif ('delete-film'==$command && isset( $_GET['id'])){
-	deletefilm_action( (int) $_GET['id'] );
+elseif ('delete-film'==$command && isset( $_POST['id'])&& $_SESSION['admin']){
+	deletefilm_action( (int) $_POST['id'] );
 }
 //==remove film ==============================================
-elseif ( 'delete-film-save' == $command && isset( $_GET['id'] ) )
+elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
 {
-	deletefilmconf_action( (int) $_GET['id'] );
+	deletefilmconf_action( (int) $_POST['id'] );
  	redirect('filmo');
 }
-
-elseif ( 'edit-film' == $command && isset( $_GET['id'] ) )
-{
- 	editfilm_action( (int) $_GET['id'] );
-}
-
 
 //page 404
 else{

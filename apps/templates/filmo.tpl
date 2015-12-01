@@ -11,7 +11,7 @@
 	<section class="film">
 	{if isset( $smarty.session.admin ) && $smarty.session.admin}
 		<div class="adminEdit container-fluid">
-		<form action="" method="get">
+		<form action="" method="post">
 		<input type="hidden" name="id" value="{$film.id}">
 		<table>
 			<tbody>

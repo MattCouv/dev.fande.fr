@@ -3,8 +3,8 @@
 {block name=body}
 	<div id="delete">
 	<div class="filmDel">
-		<form method="get">
-		<input type="hidden"name="id" value="{$smarty.get.id}">
+		<form method="post">
+		<input type="hidden"name="id" value="{$smarty.post.id}">
 		<table>
 			<tbody>
 				<tr>

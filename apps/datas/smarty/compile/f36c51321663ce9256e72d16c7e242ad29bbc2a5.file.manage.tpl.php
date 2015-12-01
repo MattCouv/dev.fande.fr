@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-11-29 22:08:56
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-01 10:12:10
          compiled from "apps\templates\manage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f36c51321663ce9256e72d16c7e242ad29bbc2a5' => 
     array (
       0 => 'apps\\templates\\manage.tpl',
-      1 => 1448830883,
+      1 => 1448961123,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448817256,
+      1 => 1448835415,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_565b696861d169_84127996',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_565b696861d169_84127996')) {function content_565b696861d169_84127996($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
@@ -85,22 +85,28 @@ admin-login">Login</a></li>
   
 <div id="addFilm">
 	<div class="filmEdit">
-	<form method="post" action="add-film-save">
+	<form method="post" action="manage-film-save">
+	<input type="hidden"name="id"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['id'])===null||$tmp==='' ? '' : $tmp);?>
+">
 	  <div class="form-group">
 	    <label for="title">Titre</label>
-	    <input type="text" class="form-control" name="title">
+	    <input type="text" class="form-control" name="title" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['title'])===null||$tmp==='' ? '' : $tmp);?>
+">
 	  </div>
 	  <div class="form-group">
 		  <label for="shortdesc">Résumé</label>
-		  <textarea class="form-control" name="shortdesc" rows="3"></textarea>
+		  <textarea class="form-control" name="shortdesc" rows="3"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['shortdesc'])===null||$tmp==='' ? '' : $tmp);?>
+</textarea>
 	  </div>
 	  <div class="form-group">
 	    <label for="year">Année</label>
-	    <input type="text" class="form-control" name="year">
+	    <input type="text" class="form-control" name="year" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['year'])===null||$tmp==='' ? '' : $tmp);?>
+">
 	  </div>
 	  <div class="form-group">
 	    <label for="rates">Score</label>
-	    <input type="text" class="form-control" name="rates">
+	    <input type="text" class="form-control" name="rates"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['rates'])===null||$tmp==='' ? '' : $tmp);?>
+">
 	  </div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>

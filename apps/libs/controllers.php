@@ -52,8 +52,17 @@ function addfilm_action(){
 
 	$smarty->display('manage.tpl');
 }
-function addfilmsave_action(){
+function addfilmsave_action($_POST, $_FILES){
 	global $smarty, $fpdo;
+	$dir2save = ROOT_DIR . '/assets/img/films';
+	debug( $dir2save, "dossier d'enregistrement" );
+	$image_source = $file['poster']['tmp_name'];
+	$image_dest = "$dir2save/{$file['poster']['name']}";
+	if (move_uploaded_file( $image_source, $image_dest )) {
+	debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
+	} else {
+	debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
+	}
 	$oMovie = new Movie( $fpdo );
 	$oMovie->add(
 		array(
@@ -68,27 +77,26 @@ function addfilmsave_action(){
 * Edite un billet.
 * param integer $id
 */
-/*function editfilm_action( $id ) {
+function editfilm_action( $id ) {
  global $smarty, $fpdo;
  // préparer les données pour la liste des utilisateurs assocciés au billet
- $users = array();
- $films = array();
- $oUser = new User( $fpdo );
  $oMovie = new Movie( $fpdo );
- foreach( $oUser->getAll() as $user ) {
- foreach( $oMovie->getAll() as $film ) {
- $users[$user['id']] = $user['display_name'];
- $films[$film['id']] = $film['display_name'];
- }
- $smarty->assign('users', $users);
- $smarty->assign('userSelect', $post['user_id']);
  // récupérer les données sur le billet $id
- $oPost = new Post( $fpdo );
- $smarty->assign('post', $oPost->get( (int)$id ));
+ $smarty->assign('film', $oMovie->get( (int)$id ));
  // affichage
  $smarty->display('manage.tpl');
 }
-function editpostsave_action() {
 
-}*/
+function editfilmsave_action(){
+	global $smarty, $fpdo;
+	$oMovie = new Movie( $fpdo );
+	$oMovie->edit( $_POST['id'],
+		array(
+		'title' => $_POST['title'],
+		'shortdesc' => $_POST['shortdesc'],
+		'year' => $_POST['year'],
+		'rates'=>$_POST['rates']
+		)
+	);
+}
 ?>

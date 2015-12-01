@@ -75,7 +75,6 @@ span.biggest,.title{
 .film{
 	padding-top: 20px;
 	margin-top: 10px;
-	max-height: 500px;
 }
 .vertical-text {
 	transform: rotate(-90deg);
