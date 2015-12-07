@@ -3,7 +3,7 @@
 {block name=body}
 <div id="addFilm">
 	<div class="filmEdit">
-	<form method="post" action="manage-film-save">
+	<form method="post" action="manage-film-save" enctype="multipart/form-data">
 	<input type="hidden"name="id"value="{$film.id|default:''}">
 	  <div class="form-group">
 	    <label for="title">Titre</label>
