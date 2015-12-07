@@ -21,9 +21,12 @@
 	    <label for="rates">Score</label>
 	    <input type="text" class="form-control" name="rates"value="{$film.rates|default:''}">
 	  </div>
+	  <div class="poster">
+			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
+	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster">
+	    <input type="file" name="poster"value="{$film.poster}">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="{$smarty.const.ROOT}filmo">Annuler</a></span>
 	</form>

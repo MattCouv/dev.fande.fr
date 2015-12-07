@@ -136,14 +136,16 @@ table,td{
 }
 /* ========================addfilm=============================== */
 #addFilm{
-	height: 100%;
+	
 	background: #555;
+
 }
 .filmEdit{
 	padding-top: 50px;
 	max-width: 996px;
 	margin: 0 auto;
 	color: #000;
+	margin-bottom: 50px;
 }
 /* ================================delete======================== */
 #delete{

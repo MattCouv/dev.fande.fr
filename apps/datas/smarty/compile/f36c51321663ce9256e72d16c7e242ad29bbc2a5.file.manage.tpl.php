@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-01 10:12:10
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-07 20:28:44
          compiled from "apps\templates\manage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f36c51321663ce9256e72d16c7e242ad29bbc2a5' => 
     array (
       0 => 'apps\\templates\\manage.tpl',
-      1 => 1448961123,
+      1 => 1449516509,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448835415,
+      1 => 1448817256,
       2 => 'file',
     ),
   ),
@@ -85,7 +85,7 @@ admin-login">Login</a></li>
   
 <div id="addFilm">
 	<div class="filmEdit">
-	<form method="post" action="manage-film-save">
+	<form method="post" action="manage-film-save" enctype="multipart/form-data">
 	<input type="hidden"name="id"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['id'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 	  <div class="form-group">
@@ -108,9 +108,14 @@ admin-login">Login</a></li>
 	    <input type="text" class="form-control" name="rates"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['rates'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 	  </div>
+	  <div class="poster">
+			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+" class="img-polaroid"/>
+	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster">
+	    <input type="file" name="poster"value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="<?php echo @constant('ROOT');?>
 filmo">Annuler</a></span>

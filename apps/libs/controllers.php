@@ -52,24 +52,17 @@ function addfilm_action(){
 
 	$smarty->display('manage.tpl');
 }
-function addfilmsave_action($_POST, $_FILES){
+function addfilmsave_action($data, $file){
 	global $smarty, $fpdo;
-	$dir2save = ROOT_DIR . '/assets/img/films';
-	debug( $dir2save, "dossier d'enregistrement" );
-	$image_source = $file['poster']['tmp_name'];
-	$image_dest = "$dir2save/{$file['poster']['name']}";
-	if (move_uploaded_file( $image_source, $image_dest )) {
-	debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
-	} else {
-	debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
-	}
 	$oMovie = new Movie( $fpdo );
+	add_images($file['poster']);
 	$oMovie->add(
 		array(
 		'title' => $_POST['title'],
 		'shortdesc' => $_POST['shortdesc'],
 		'year' => $_POST['year'],
-		'rates'=>$_POST['rates']
+		'rates'=>$_POST['rates'],
+		'poster'=>$file['poster']['name']
 		)
 	);
 }
@@ -87,16 +80,53 @@ function editfilm_action( $id ) {
  $smarty->display('manage.tpl');
 }
 
-function editfilmsave_action(){
+function editfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
 	$oMovie->edit( $_POST['id'],
-		array(
-		'title' => $_POST['title'],
-		'shortdesc' => $_POST['shortdesc'],
-		'year' => $_POST['year'],
-		'rates'=>$_POST['rates']
-		)
-	);
+			array(
+			'title' => $_POST['title'],
+			'shortdesc' => $_POST['shortdesc'],
+			'year' => $_POST['year'],
+			'rates'=>$_POST['rates'],
+			)
+		);
+	debug($file, 'Informations de débogage');
+	if (!empty($file['poster']['name'])) {
+		$oMovie->edit( $_POST['id'],array('poster'=>add_images($file['poster'])));
+	}
+}
+function add_images($file){
+	if ($file['type']=='image/png') {
+		$dir2save = ROOT_DIR . '/assets/img/films';
+		debug( $dir2save, "dossier d'enregistrement" );
+		$image_source = $file['tmp_name'];
+		list($width, $height) = getimagesize($image_source);
+		// lire l'image d'origine
+		$img = imagecreatefrompng( $image_source );
+		// définir une nouvelle image avec les dimensions autorisés
+		$new_width=800;
+
+		$new_height=$new_width/($width/$height);
+		debug($new_width,'largeur');
+		debug($new_height,'hauteur');
+		$img2 = ImageCreateTrueColor( $new_width, $new_height );
+		imagecopyResampled( $img2, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+		imagejpeg( $img2, $image_source );
+		// effacer les zones mémoire
+		imagedestroy($img);
+		imagedestroy($img2);
+		$path_parts = pathinfo($file["name"]);
+		$name = $path_parts['filename']."_".microtime(true).'.'.$path_parts['extension'];
+		$image_dest = "$dir2save/".$name;
+		if (move_uploaded_file( $image_source, $image_dest )) {
+		debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
+		} else {
+		debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
+		}
+		return $name;
+	}else {
+	debug( " PROBLÈME le fichier n'est pas un png!!\n" );
+	}
 }
 ?>

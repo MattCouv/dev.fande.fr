@@ -62,14 +62,14 @@ elseif ('add-film'==$command && $_SESSION['admin']) {
 }
 
 //== ajouter un film =====================================
-elseif('manage-film-save'==$command){
+elseif('manage-film-save'==$command && $_SESSION['admin']){
 	//sauvegarder le film
 	if ($_POST['id']=="") {
 		addfilmsave_action($_POST, $_FILES);
-		redirect('filmo');
+		/*redirect('filmo');*/
 	}else{
-		editfilmsave_action();
-		redirect('filmo');
+		editfilmsave_action($_POST, $_FILES);
+		/*redirect('filmo');*/
 	}
 }
 
