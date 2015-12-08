@@ -15,7 +15,7 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete{
+#welcome,#filmo,#addFilm,#delete,#error{
 	padding-top: 61px;
 	padding-bottom: 80px;
 }

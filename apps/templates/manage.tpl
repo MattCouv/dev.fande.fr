@@ -26,7 +26,7 @@
 	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster"value="{$film.poster}">
+	    <input type="file" name="poster">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="{$smarty.const.ROOT}filmo">Annuler</a></span>
 	</form>

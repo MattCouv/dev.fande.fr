@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-07 20:28:44
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 08:21:47
          compiled from "apps\templates\manage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f36c51321663ce9256e72d16c7e242ad29bbc2a5' => 
     array (
       0 => 'apps\\templates\\manage.tpl',
-      1 => 1449516509,
+      1 => 1449559264,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448817256,
+      1 => 1448835415,
       2 => 'file',
     ),
   ),
@@ -114,8 +114,7 @@ admin-login">Login</a></li>
 	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster"value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
-">
+	    <input type="file" name="poster">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="<?php echo @constant('ROOT');?>
 filmo">Annuler</a></span>

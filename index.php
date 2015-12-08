@@ -50,7 +50,6 @@ elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_P
 }
 //Permet de ce déconnecté de la session et la détruire
 elseif ('logout'==$command) {
-	session_start();
 	unset($_SESSION["admin"]);
 	session_destroy();
 	// redirectionne vers l'index

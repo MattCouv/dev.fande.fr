@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 08:26:34
-         compiled from "apps\templates\deleteConf.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:4955565b742973ecc3-51261084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 09:03:47
+         compiled from "apps\templates\error.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:61156668ee32a5173-82378542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0f3296205db7bdb78ec119b0064e94fc1aaae66a' => 
+    'e567caa3e687c23094c415b256401c3f627c1a05' => 
     array (
-      0 => 'apps\\templates\\deleteConf.tpl',
-      1 => 1448959453,
+      0 => 'apps\\templates\\error.tpl',
+      1 => 1449561736,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4955565b742973ecc3-51261084',
+  'nocache_hash' => '61156668ee32a5173-82378542',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_565b74297820d6_31887370',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_56668ee33269a6_95325837',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_565b74297820d6_31887370')) {function content_565b74297820d6_31887370($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_56668ee33269a6_95325837')) {function content_56668ee33269a6_95325837($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -83,24 +83,9 @@ admin-login">Login</a></li>
 	</nav>
 
   
-	<div id="delete">
-	<div class="filmDel">
-		<form method="post">
-		<input type="hidden"name="id" value="<?php echo $_POST['id'];?>
-">
-		<table>
-			<tbody>
-				<tr>
-					<td>Valider</td>
-					<td>Annuler</td>
-				</tr>
-				<tr>
-					<td><button type="submit" formaction="delete-film-save" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-ok"></span></button></td>
-					<td><a href="filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span></a></td>
-				</tr>
-			</tbody>
-		</table>
-		</form>
+	<div id="error">
+	<div class="errorDel">
+		<h1>Oups une error c'est produite</h1>
 	</div>
 	</div>
 
