@@ -13,6 +13,7 @@
 		<div class="adminEdit container-fluid">
 		<form action="" method="post">
 		<input type="hidden" name="id" value="{$film.id}">
+		<input type="hidden"name="poster" value="{$film.poster}">
 		<table>
 			<tbody>
 				<tr>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 08:12:01
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-09 16:29:05
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1448959617,
+      1 => 1449674916,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -101,6 +101,8 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 		<div class="adminEdit container-fluid">
 		<form action="" method="post">
 		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+">
+		<input type="hidden"name="poster" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 ">
 		<table>
 			<tbody>

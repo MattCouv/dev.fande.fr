@@ -57,6 +57,7 @@ elseif ('logout'==$command) {
 }
 //afficher la page d'ajout de film
 elseif ('add-film'==$command && $_SESSION['admin']) {
+
 	addfilm_action();
 }
 
@@ -79,13 +80,13 @@ elseif ( 'edit-film' == $command && isset( $_POST['id'] ) && $_SESSION['admin'])
 }
 //== affiche page qui confirme la deletion  ===========================================
 elseif ('delete-film'==$command && isset( $_POST['id'])&& $_SESSION['admin']){
-	deletefilm_action( (int) $_POST['id'] );
+	deletefilm_action( (int) $_POST['id'] ,$_POST['poster']);
 }
 //==remove film ==============================================
 elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
 {
-	deletefilmconf_action( (int) $_POST['id'] );
- 	redirect('filmo');
+	deletefilmconf_action( (int) $_POST['id'],$_POST['poster'] );
+ 	/*redirect('filmo');*/
 }
 
 //page 404

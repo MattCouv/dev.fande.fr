@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 08:26:34
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-09 16:22:26
          compiled from "apps\templates\deleteConf.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4955565b742973ecc3-51261084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0f3296205db7bdb78ec119b0064e94fc1aaae66a' => 
     array (
       0 => 'apps\\templates\\deleteConf.tpl',
-      1 => 1448959453,
+      1 => 1449674519,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -87,6 +87,8 @@ admin-login">Login</a></li>
 	<div class="filmDel">
 		<form method="post">
 		<input type="hidden"name="id" value="<?php echo $_POST['id'];?>
+">
+		<input type="hidden"name="poster" value="<?php echo $_POST['poster'];?>
 ">
 		<table>
 			<tbody>

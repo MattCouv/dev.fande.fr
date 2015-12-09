@@ -26,14 +26,18 @@ function redirect( $url ) {
 /*function pour uploader des images*/
 function add_images($file){
   debug($file,'file');
-  if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg'||$file['type']=='image/pjpeg'||$file['type']=='image/jpeg'||$file['type']=='image/png') {
+  if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg'||$file['type']=='image/png') {
 
     $dir2save = ROOT_DIR . '/assets/img/films';
     debug( $dir2save, "dossier d'enregistrement" );
     $image_source = $file['tmp_name'];
     list($width, $height) = getimagesize($image_source);
     // lire l'image d'origine
-    $img = imagecreatefrompng( $image_source );
+    if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg') {
+      $img = imagecreatefromjpeg( $image_source );
+    }else{
+      $img = imagecreatefrompng( $image_source );
+    }
     // définir une nouvelle image avec les dimensions autorisés
     $new_width=800;
 
@@ -48,7 +52,7 @@ function add_images($file){
     imagedestroy($img2);
     $path_parts = pathinfo($file["name"]);
     $filename = $path_parts['filename']."_".microtime(true).'.'.$path_parts['extension'];
-    $image_dest = "$dir2save/".$filename;
+    $image_dest = "$dir2save/$filename";
     if (move_uploaded_file( $image_source, $image_dest )) {
     debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
     $error=false;
@@ -74,5 +78,23 @@ function isposterset($file,$data){
     }
   }
   return $movie;
+}
+/*
+* Effacer une image dans le dossier /assets/img/films.
+* @param {string} $image
+* le nom du fichier image à effacer.
+* @code
+* deleteImage('poster.png'); // effacer l'image /img/films/poster.png
+* @endcode
+*/
+function deleteImage( $image )
+{
+  $dir2destroy = ROOT_DIR . '/assets/img/films/'.$image;
+  $err=unlink($dir2destroy);
+  if ($err==false) {
+    echo 'error';
+  }else{
+    echo 'good';
+  }
 }
 ?>

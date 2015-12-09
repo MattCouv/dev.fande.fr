@@ -12,18 +12,6 @@ function home_action() {
 function filmo_action(){
 	global $smarty,$fpdo;
 	$oMovie = new Movie( $fpdo );
-	//utilisé tamporairement pour ajouter a la base de donnée des film
-	/*debug ( $oMovie, 'objet oMovie');
-	$oMovie->add(
-		array(
-		'title' => "Les affranchis",
-		'shortdesc' => "Le film est basé sur le livre Wiseguy, de Nicholas...",
-		'year' => 1990,
-		'poster' => "lesaffranchis.png"
-		)
-	);
-	$oMovie->delete(id);*/
-	//Toujours déclarer la variables smarty
 	$smarty->assign('films', $oMovie->getAll() );
 
 	//Affichage
@@ -42,10 +30,11 @@ function deletefilm_action(){
 	$smarty->display('deleteConf.tpl');
 }
 //confirmation remove film from database
-function deletefilmconf_action($id){
+function deletefilmconf_action($id,$image){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
 	$oMovie->delete($id);
+	deleteImage($image);
 }
 function addfilm_action(){
 	global $smarty;
