@@ -60,24 +60,32 @@ function add_images($file){
     debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
     $error=true;
     }
-    return array($error,$filename);
   }else {
   debug( " PROBLÈME le fichier n'est pas un png!!\n" );
   $error=true;
+  $filename="";
   }
+  return array($error,$filename);
 }
+
+
+/*
+hhh
+@param array  $file qui contient le type, le name et toutes info du $_FILE['poster'],
+*/
 function isposterset($file,$data){
   $movie=$data;
   if (!empty($file['poster']['name'])) {
     list($err,$fname)=add_images($file['poster']);
     if($err!=true){
       $movie['poster']=$fname;
+      $err=false;
     }
     else{
-      $smarty->display('error.tpl');
+      $err=true;
     }
   }
-  return $movie;
+  return array($err,$movie);
 }
 /*
 * Effacer une image dans le dossier /assets/img/films.
@@ -92,7 +100,7 @@ function deleteImage( $image )
   $dir2destroy = ROOT_DIR . '/assets/img/films/'.$image;
   $err=unlink($dir2destroy);
   if ($err==false) {
-    echo 'error';
+    return $err;
   }else{
     echo 'good';
   }

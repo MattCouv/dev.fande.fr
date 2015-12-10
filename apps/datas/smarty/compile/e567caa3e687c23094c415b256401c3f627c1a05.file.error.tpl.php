@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 09:03:47
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-10 10:43:53
          compiled from "apps\templates\error.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:61156668ee32a5173-82378542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e567caa3e687c23094c415b256401c3f627c1a05' => 
     array (
       0 => 'apps\\templates\\error.tpl',
-      1 => 1449561736,
+      1 => 1449740624,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_56668ee33269a6_95325837',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_56668ee33269a6_95325837')) {function content_56668ee33269a6_95325837($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
@@ -85,7 +85,9 @@ admin-login">Login</a></li>
   
 	<div id="error">
 	<div class="errorDel">
-		<h1>Oups une error c'est produite</h1>
+		<h1>Oups une error c'est produite lors de l'envoie de l'image.</h1>
+		<a href="<?php echo @constant('ROOT');?>
+filmo">Veuillez réessayer</a>
 	</div>
 	</div>
 

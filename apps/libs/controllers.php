@@ -41,11 +41,21 @@ function addfilm_action(){
 
 	$smarty->display('manage.tpl');
 }
+function error_action(){
+	global $smarty;
+
+	$smarty->display('error.tpl');
+}
 function addfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
-	$movie=isposterset($file,$_POST);
-	$oMovie->add($movie);
+	list($err,$movie)=isposterset($file,$_POST);
+	if ($err==true) {
+		return $err;
+	}else{
+		$oMovie->add($movie);
+		return $err;
+	}
 }
 /**
 * Edite un billet.
@@ -65,9 +75,13 @@ function editfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
 
-	$movie=isposterset($file,$_POST);
-
-	$oMovie->edit( $_POST['id'],$movie);
+	list($err,$movie)=isposterset($file,$_POST);
+	if ($err==true) {
+		return $err;
+	}else{
+		$oMovie->edit( $_POST['id'],$movie);
+		return $err;
+	}
 }
 
 ?>

@@ -60,16 +60,28 @@ elseif ('add-film'==$command && $_SESSION['admin']) {
 
 	addfilm_action();
 }
+elseif ('error'==$command) {
+
+	error_action();
+}
 
 //== ajouter un film =====================================
 elseif('manage-film-save'==$command && $_SESSION['admin']){
 	//sauvegarder le film
 	if ($_POST['id']=="") {
-		addfilmsave_action($_POST, $_FILES);
-		/*redirect('filmo');*/
+		$err=addfilmsave_action($_POST, $_FILES);
+		if($err==true){
+			redirect('error');
+		}else{
+			redirect('filmo');
+		}
 	}else{
-		editfilmsave_action($_POST, $_FILES);
-		/*redirect('filmo');*/
+		$err=editfilmsave_action($_POST, $_FILES);
+		if($err==true){
+			redirect('error');
+		}else{
+			redirect('filmo');
+		}
 	}
 }
 
