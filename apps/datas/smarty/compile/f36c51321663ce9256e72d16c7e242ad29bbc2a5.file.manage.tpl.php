@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-13 22:17:17
-=======
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 07:56:26
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 08:22:13
          compiled from "apps\templates\manage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29842566fbfa578a922-24615483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -17,23 +13,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-<<<<<<< HEAD
-      1 => 1450040663,
-=======
-      1 => 1449758663,
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
+      1 => 1450163880,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7392565b69685cf965-16702727',
+  'nocache_hash' => '29842566fbfa578a922-24615483',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_565b696861d169_84127996',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_566fbfa5831346_08259851',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_565b696861d169_84127996')) {function content_565b696861d169_84127996($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_566fbfa5831346_08259851')) {function content_566fbfa5831346_08259851($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -143,26 +135,8 @@ filmo">Annuler</a></span>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-<<<<<<< HEAD
 <script src="assets/js/vendor/nanobar.js"></script>
-<!-- <script>
-	var options = {
-	bg: '#ffc715',
-
-	// leave target blank for global nanobar
-	target: document.getElementById('loader'),
-
-};
-
-var nanobar = new Nanobar( options );
-	nanobar.go(50);
-	$(window).load(function() {
-    	nanobar.go(100);
-	});
-</script> -->
-=======
 <script src="/assets/js/vendor/jquery.rateit.min.js"></script>
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
 </body>
 </html>
 <?php }} ?>

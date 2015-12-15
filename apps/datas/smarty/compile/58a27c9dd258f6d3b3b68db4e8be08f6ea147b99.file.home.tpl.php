@@ -1,39 +1,31 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-13 22:04:50
-=======
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-10 17:30:20
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 08:21:35
          compiled from "apps\templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1238156260c3beba9b5-20455815%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23933566fbf7fe1ea01-07125248%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '58a27c9dd258f6d3b3b68db4e8be08f6ea147b99' => 
     array (
       0 => 'apps\\templates\\home.tpl',
-      1 => 1448815748,
+      1 => 1448835415,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-<<<<<<< HEAD
-      1 => 1450040663,
-=======
-      1 => 1449758663,
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
+      1 => 1450163880,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1238156260c3beba9b5-20455815',
+  'nocache_hash' => '23933566fbf7fe1ea01-07125248',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_56260c3c03bab9_23643161',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_566fbf7feae8a2_85791742',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56260c3c03bab9_23643161')) {function content_56260c3c03bab9_23643161($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_566fbf7feae8a2_85791742')) {function content_566fbf7feae8a2_85791742($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -139,26 +131,8 @@ admin-login">Login</a></li>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-<<<<<<< HEAD
 <script src="assets/js/vendor/nanobar.js"></script>
-<!-- <script>
-	var options = {
-	bg: '#ffc715',
-
-	// leave target blank for global nanobar
-	target: document.getElementById('loader'),
-
-};
-
-var nanobar = new Nanobar( options );
-	nanobar.go(50);
-	$(window).load(function() {
-    	nanobar.go(100);
-	});
-</script> -->
-=======
 <script src="/assets/js/vendor/jquery.rateit.min.js"></script>
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
 </body>
 </html>
 <?php }} ?>
