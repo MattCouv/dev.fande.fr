@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-09 16:29:05
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-10 15:50:07
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1449674916,
+      1 => 1449754391,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448835415,
+      1 => 1449758663,
       2 => 'file',
     ),
   ),
@@ -25,8 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_56580bad7eb6b6_32790075',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56580bad7eb6b6_32790075')) {function content_56580bad7eb6b6_32790075($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\dev.fande.fr\\apps\\libs\\smarty\\plugins\\modifier.truncate.php';
-?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_56580bad7eb6b6_32790075')) {function content_56580bad7eb6b6_32790075($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -42,6 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -134,12 +134,12 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
 </p>
 			<hr>
-			<p class="description">
-			<span class="show cat70"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,'',true);?>
+			<p class="description show cat70">
+			<?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],0,70);?>
 
-			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],80,500);?>
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
 </span>
-			<span class="click btn btn-default btn-xs">...</span></span>
+			<span class="click btn btn-default btn-xs">...</span>
 			</p>
 		</div>
 	</div>
@@ -164,6 +164,6 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-
+<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
 </body>
 </html><?php }} ?>

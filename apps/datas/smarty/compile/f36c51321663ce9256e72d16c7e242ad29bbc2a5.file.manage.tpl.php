@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-08 08:21:47
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 07:56:26
          compiled from "apps\templates\manage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f36c51321663ce9256e72d16c7e242ad29bbc2a5' => 
     array (
       0 => 'apps\\templates\\manage.tpl',
-      1 => 1449559264,
+      1 => 1449756970,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448835415,
+      1 => 1449758663,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -103,18 +104,14 @@ admin-login">Login</a></li>
 	    <input type="text" class="form-control" name="year" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['year'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 	  </div>
-	  <div class="form-group">
-	    <label for="rates">Score</label>
-	    <input type="text" class="form-control" name="rates"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['rates'])===null||$tmp==='' ? '' : $tmp);?>
-">
-	  </div>
 	  <div class="poster">
-			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+	  		<img id="blah" src="#" alt="lol">
+			<img id="right"src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
 	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster">
+	    <input type="file" id="imgInp" name="poster">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="<?php echo @constant('ROOT');?>
 filmo">Annuler</a></span>
@@ -137,6 +134,6 @@ filmo">Annuler</a></span>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-
+<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
 </body>
 </html><?php }} ?>

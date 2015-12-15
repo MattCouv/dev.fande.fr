@@ -23,7 +23,11 @@ function redirect( $url ) {
   header('Location: ' . ROOT . $url );
 }
 
-/*function pour uploader des images*/
+/**
+  function pour uploader des images
+  @param array $file contient $_FILE['poster'], name, tpm_name, type.
+  @return array $err type boolean et $filename qui est un string avec le nouveau nom de l'image
+*/
 function add_images($file){
   debug($file,'file');
   if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg'||$file['type']=='image/png') {
@@ -40,7 +44,6 @@ function add_images($file){
     }
     // définir une nouvelle image avec les dimensions autorisés
     $new_width=800;
-
     $new_height=$new_width/($width/$height);
     debug($new_width,'largeur');
     debug($new_height,'hauteur');
@@ -50,7 +53,9 @@ function add_images($file){
     // effacer les zones mémoire
     imagedestroy($img);
     imagedestroy($img2);
+    //decomposition du nom de l'image et son extension
     $path_parts = pathinfo($file["name"]);
+    //ajout du timestamp
     $filename = $path_parts['filename']."_".microtime(true).'.'.$path_parts['extension'];
     $image_dest = "$dir2save/$filename";
     if (move_uploaded_file( $image_source, $image_dest )) {
@@ -69,9 +74,10 @@ function add_images($file){
 }
 
 
-/*
-hhh
-@param array  $file qui contient le type, le name et toutes info du $_FILE['poster'],
+/**
+@param array  $file qui contient le type, le name et toutes info $_FILE['poster']
+@param array $data qui contient $_POST
+@return array $err type boolean et $movie qui rajoute a $_FILE['poster'] la variable $fname;
 */
 function isposterset($file,$data){
   $movie=$data;
@@ -87,13 +93,11 @@ function isposterset($file,$data){
   }
   return array($err,$movie);
 }
-/*
-* Effacer une image dans le dossier /assets/img/films.
-* @param {string} $image
-* le nom du fichier image à effacer.
-* @code
-* deleteImage('poster.png'); // effacer l'image /img/films/poster.png
-* @endcode
+/**
+Effacer une image dans le dossier /assets/img/films.
+@param $image est le string 
+le nom du fichier image à effacer.
+@return l'erreur $err type boolean
 */
 function deleteImage( $image )
 {

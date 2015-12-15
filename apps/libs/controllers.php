@@ -58,9 +58,10 @@ function addfilmsave_action($data, $file){
 	}
 }
 /**
-* Edite un billet.
-* param integer $id
-*/
+ * [editfilm_action description]
+ * @param  [int] $id [id du film que l'on veut editer $_POST['id']]
+ * @return [type]     [description]
+ */
 function editfilm_action( $id ) {
  global $smarty, $fpdo;
  // préparer les données pour la liste des utilisateurs assocciés au billet
@@ -70,7 +71,12 @@ function editfilm_action( $id ) {
  // affichage
  $smarty->display('manage.tpl');
 }
-
+/**
+ * [editfilmsave_action methode to edit a selected film]
+ * @param  [array] $data [array content from $_POST]
+ * @param  [array] $file [array content from $_file]
+ * @return [type]       [description]
+ */
 function editfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );

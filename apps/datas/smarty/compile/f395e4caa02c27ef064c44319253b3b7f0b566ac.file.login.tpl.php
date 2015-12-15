@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-01 08:20:52
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 07:56:21
          compiled from "apps\templates\login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23172565accf92d29e8-96518709%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448835415,
+      1 => 1449758663,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -118,6 +119,6 @@ admin-login">Login</a></li>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-
+<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
 </body>
 </html><?php }} ?>
