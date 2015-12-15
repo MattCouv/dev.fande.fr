@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 08:21:53
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 12:27:32
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11027566fbf91309ed4-67352321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1449754391,
+      1 => 1450178851,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450163880,
+      1 => 1450177823,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_566fbf914e22f4_50597048',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_566fbf914e22f4_50597048')) {function content_566fbf914e22f4_50597048($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="/assets/css/rateit.css">
+	<link rel="stylesheet" href="assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -124,12 +124,8 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 		<div class="poster col-xs-10 col-md-5">
 			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
-			<p class="rate"> <?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? $_smarty_tpl->tpl_vars['film']->value['rates']+1 - (1) : 1-($_smarty_tpl->tpl_vars['film']->value['rates'])+1)/abs($_smarty_tpl->tpl_vars['i']->step));
-if ($_smarty_tpl->tpl_vars['i']->total > 0) {
-for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
-$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>*
-			<?php }} ?>[<?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
-/5]</p>
+			<span data-productid="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" class="rateit"></span><input class="btn"type="button" value="Voter">
 		</div>
 		<div class="infos col-xs-12 col-md-6">
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
@@ -166,7 +162,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>
-<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
+<script src="assets/js/vendor/jquery.rateit.min.js"></script>
 </body>
 </html>
 <?php }} ?>

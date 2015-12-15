@@ -31,8 +31,7 @@
 		</div>
 		<div class="poster col-xs-10 col-md-5">
 			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
-			<p class="rate"> {for $i=1 to $film.rates}*
-			{/for}[{$film.rates}/5]</p>
+			<span data-productid="{$film.id}" class="rateit"></span><input class="btn"type="button" value="Voter">
 		</div>
 		<div class="infos col-xs-12 col-md-6">
 			<p class="title">{$film.title}</p>

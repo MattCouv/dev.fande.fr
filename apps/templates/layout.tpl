@@ -14,7 +14,7 @@
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="/assets/css/rateit.css">
+	<link rel="stylesheet" href="assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -67,6 +67,6 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>
-<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
+<script src="assets/js/vendor/jquery.rateit.min.js"></script>
 </body>
 </html>
