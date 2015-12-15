@@ -1,39 +1,31 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-13 22:17:07
-=======
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 07:56:21
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
-         compiled from "apps\templates\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:23172565accf92d29e8-96518709%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-10 10:43:53
+         compiled from "apps\templates\error.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:61156668ee32a5173-82378542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'f395e4caa02c27ef064c44319253b3b7f0b566ac' => 
+    'e567caa3e687c23094c415b256401c3f627c1a05' => 
     array (
-      0 => 'apps\\templates\\login.tpl',
-      1 => 1448820383,
+      0 => 'apps\\templates\\error.tpl',
+      1 => 1449740624,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-<<<<<<< HEAD
-      1 => 1450040663,
-=======
-      1 => 1449758663,
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
+      1 => 1448835415,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23172565accf92d29e8-96518709',
+  'nocache_hash' => '61156668ee32a5173-82378542',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_565accf930c709_75225943',
+  'unifunc' => 'content_56668ee33269a6_95325837',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_565accf930c709_75225943')) {function content_565accf930c709_75225943($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_56668ee33269a6_95325837')) {function content_56668ee33269a6_95325837($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -41,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  <title>Login Administrateur</title>
+	  <title>Fan de Filmographie</title>
 	  <meta name="viewport" content="initial-scale=1.0">
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -49,7 +41,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="/assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -89,29 +80,16 @@ admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>
-		
 	</nav>
-	
+
   
-<div id="login">
-	<div class="formContainer">
-	<form method="post" action="login-check">
-	<table>
-		<tbody>
-			<tr>
-				<td><label for="admin_name">Utilisateur</label></td>
-				<td><label for="admin_pwd">Mot de passe</label></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="admin_name" value="admin"></td>
-				<td><input type="password" name="admin_pwd" value="secret"></td>
-				<td><input type="submit" class="btn btn-primary"value="Login"></td>
-			</tr>
-		</tbody>
-	</table>
-	</form>
+	<div id="error">
+	<div class="errorDel">
+		<h1>Oups une error c'est produite lors de l'envoie de l'image.</h1>
+		<a href="<?php echo @constant('ROOT');?>
+filmo">Veuillez réessayer</a>
 	</div>
-</div>
+	</div>
 
 
 
@@ -128,26 +106,6 @@ admin-login">Login</a></li>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
-<<<<<<< HEAD
-<script src="assets/js/vendor/nanobar.js"></script>
-<!-- <script>
-	var options = {
-	bg: '#ffc715',
 
-	// leave target blank for global nanobar
-	target: document.getElementById('loader'),
-
-};
-
-var nanobar = new Nanobar( options );
-	nanobar.go(50);
-	$(window).load(function() {
-    	nanobar.go(100);
-	});
-</script> -->
-=======
-<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
->>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
 </body>
-</html>
-<?php }} ?>
+</html><?php }} ?>

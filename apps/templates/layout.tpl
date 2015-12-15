@@ -14,6 +14,7 @@
 	<!-- @@@ CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/rateit.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700' rel='stylesheet' type='text/css'>
 </head>
@@ -65,6 +66,7 @@
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
+<<<<<<< HEAD
 <script src="assets/js/vendor/nanobar.js"></script>
 <!-- <script>
 	var options = {
@@ -81,5 +83,8 @@ var nanobar = new Nanobar( options );
     	nanobar.go(100);
 	});
 </script> -->
+=======
+<script src="/assets/js/vendor/jquery.rateit.min.js"></script>
+>>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
 </body>
 </html>

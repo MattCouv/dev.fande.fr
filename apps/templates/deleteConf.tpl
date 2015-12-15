@@ -5,6 +5,7 @@
 	<div class="filmDel">
 		<form method="post">
 		<input type="hidden"name="id" value="{$smarty.post.id}">
+		<input type="hidden"name="poster" value="{$smarty.post.poster}">
 		<table>
 			<tbody>
 				<tr>

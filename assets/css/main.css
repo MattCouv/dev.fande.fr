@@ -15,7 +15,7 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete{
+#welcome,#filmo,#addFilm,#delete,#error{
 	padding-top: 61px;
 	padding-bottom: 80px;
 }
@@ -104,6 +104,10 @@ span.biggest,.title{
 	min-height: 100px;
 	width: 80%;
 }
+.fullDesc{
+	padding: 0;
+	margin: 0;
+}
 
 .adminEdit{
 	height: 80px;
@@ -147,6 +151,16 @@ table,td{
 	color: #000;
 	margin-bottom: 50px;
 }
+.filmEdit .poster{
+	width: 100%;
+}
+.filmEdit .poster img{
+	width: 50%;
+}
+.filmEdit .poster img .right{
+	float: right;
+}
+
 /* ================================delete======================== */
 #delete{
 	height: 100%;

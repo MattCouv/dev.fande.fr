@@ -12,18 +12,6 @@ function home_action() {
 function filmo_action(){
 	global $smarty,$fpdo;
 	$oMovie = new Movie( $fpdo );
-	//utilisé tamporairement pour ajouter a la base de donnée des film
-	/*debug ( $oMovie, 'objet oMovie');
-	$oMovie->add(
-		array(
-		'title' => "Les affranchis",
-		'shortdesc' => "Le film est basé sur le livre Wiseguy, de Nicholas...",
-		'year' => 1990,
-		'poster' => "lesaffranchis.png"
-		)
-	);
-	$oMovie->delete(id);*/
-	//Toujours déclarer la variables smarty
 	$smarty->assign('films', $oMovie->getAll() );
 
 	//Affichage
@@ -42,34 +30,38 @@ function deletefilm_action(){
 	$smarty->display('deleteConf.tpl');
 }
 //confirmation remove film from database
-function deletefilmconf_action($id){
+function deletefilmconf_action($id,$image){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
 	$oMovie->delete($id);
+	deleteImage($image);
 }
 function addfilm_action(){
 	global $smarty;
 
 	$smarty->display('manage.tpl');
 }
+function error_action(){
+	global $smarty;
+
+	$smarty->display('error.tpl');
+}
 function addfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
-	add_images($file['poster']);
-	$oMovie->add(
-		array(
-		'title' => $_POST['title'],
-		'shortdesc' => $_POST['shortdesc'],
-		'year' => $_POST['year'],
-		'rates'=>$_POST['rates'],
-		'poster'=>$file['poster']['name']
-		)
-	);
+	list($err,$movie)=isposterset($file,$_POST);
+	if ($err==true) {
+		return $err;
+	}else{
+		$oMovie->add($movie);
+		return $err;
+	}
 }
 /**
-* Edite un billet.
-* param integer $id
-*/
+ * [editfilm_action description]
+ * @param  [int] $id [id du film que l'on veut editer $_POST['id']]
+ * @return [type]     [description]
+ */
 function editfilm_action( $id ) {
  global $smarty, $fpdo;
  // préparer les données pour la liste des utilisateurs assocciés au billet
@@ -79,54 +71,23 @@ function editfilm_action( $id ) {
  // affichage
  $smarty->display('manage.tpl');
 }
-
+/**
+ * [editfilmsave_action methode to edit a selected film]
+ * @param  [array] $data [array content from $_POST]
+ * @param  [array] $file [array content from $_file]
+ * @return [type]       [description]
+ */
 function editfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
-	$oMovie->edit( $_POST['id'],
-			array(
-			'title' => $_POST['title'],
-			'shortdesc' => $_POST['shortdesc'],
-			'year' => $_POST['year'],
-			'rates'=>$_POST['rates'],
-			)
-		);
-	debug($file, 'Informations de débogage');
-	if (!empty($file['poster']['name'])) {
-		$oMovie->edit( $_POST['id'],array('poster'=>add_images($file['poster'])));
-	}
-}
-function add_images($file){
-	if ($file['type']=='image/png') {
-		$dir2save = ROOT_DIR . '/assets/img/films';
-		debug( $dir2save, "dossier d'enregistrement" );
-		$image_source = $file['tmp_name'];
-		list($width, $height) = getimagesize($image_source);
-		// lire l'image d'origine
-		$img = imagecreatefrompng( $image_source );
-		// définir une nouvelle image avec les dimensions autorisés
-		$new_width=800;
 
-		$new_height=$new_width/($width/$height);
-		debug($new_width,'largeur');
-		debug($new_height,'hauteur');
-		$img2 = ImageCreateTrueColor( $new_width, $new_height );
-		imagecopyResampled( $img2, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
-		imagejpeg( $img2, $image_source );
-		// effacer les zones mémoire
-		imagedestroy($img);
-		imagedestroy($img2);
-		$path_parts = pathinfo($file["name"]);
-		$name = $path_parts['filename']."_".microtime(true).'.'.$path_parts['extension'];
-		$image_dest = "$dir2save/".$name;
-		if (move_uploaded_file( $image_source, $image_dest )) {
-		debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
-		} else {
-		debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
-		}
-		return $name;
-	}else {
-	debug( " PROBLÈME le fichier n'est pas un png!!\n" );
+	list($err,$movie)=isposterset($file,$_POST);
+	if ($err==true) {
+		return $err;
+	}else{
+		$oMovie->edit( $_POST['id'],$movie);
+		return $err;
 	}
 }
+
 ?>

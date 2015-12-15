@@ -50,7 +50,6 @@ elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_P
 }
 //Permet de ce déconnecté de la session et la détruire
 elseif ('logout'==$command) {
-	session_start();
 	unset($_SESSION["admin"]);
 	session_destroy();
 	// redirectionne vers l'index
@@ -58,18 +57,31 @@ elseif ('logout'==$command) {
 }
 //afficher la page d'ajout de film
 elseif ('add-film'==$command && $_SESSION['admin']) {
+
 	addfilm_action();
+}
+elseif ('error'==$command) {
+
+	error_action();
 }
 
 //== ajouter un film =====================================
 elseif('manage-film-save'==$command && $_SESSION['admin']){
 	//sauvegarder le film
 	if ($_POST['id']=="") {
-		addfilmsave_action($_POST, $_FILES);
-		/*redirect('filmo');*/
+		$err=addfilmsave_action($_POST, $_FILES);
+		if($err==true){
+			redirect('error');
+		}else{
+			redirect('filmo');
+		}
 	}else{
-		editfilmsave_action($_POST, $_FILES);
-		/*redirect('filmo');*/
+		$err=editfilmsave_action($_POST, $_FILES);
+		if($err==true){
+			redirect('error');
+		}else{
+			redirect('filmo');
+		}
 	}
 }
 
@@ -80,13 +92,13 @@ elseif ( 'edit-film' == $command && isset( $_POST['id'] ) && $_SESSION['admin'])
 }
 //== affiche page qui confirme la deletion  ===========================================
 elseif ('delete-film'==$command && isset( $_POST['id'])&& $_SESSION['admin']){
-	deletefilm_action( (int) $_POST['id'] );
+	deletefilm_action( (int) $_POST['id'] ,$_POST['poster']);
 }
 //==remove film ==============================================
 elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
 {
-	deletefilmconf_action( (int) $_POST['id'] );
- 	redirect('filmo');
+	deletefilmconf_action( (int) $_POST['id'],$_POST['poster'] );
+ 	/*redirect('filmo');*/
 }
 
 //page 404

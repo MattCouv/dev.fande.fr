@@ -17,16 +17,13 @@
 	    <label for="year">Année</label>
 	    <input type="text" class="form-control" name="year" value="{$film.year|default:''}">
 	  </div>
-	  <div class="form-group">
-	    <label for="rates">Score</label>
-	    <input type="text" class="form-control" name="rates"value="{$film.rates|default:''}">
-	  </div>
 	  <div class="poster">
-			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
+	  		<img id="blah" src="#" alt="lol">
+			<img id="right"src="assets/img/films/{$film.poster}" class="img-polaroid"/>
 	</div>
 	  <div class="form-group">
 	    <label for="poster">Fichier poster</label>
-	    <input type="file" name="poster"value="{$film.poster}">
+	    <input type="file" id="imgInp" name="poster">
 	  </div>
 	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="{$smarty.const.ROOT}filmo">Annuler</a></span>
 	</form>

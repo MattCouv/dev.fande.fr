@@ -13,6 +13,7 @@
 		<div class="adminEdit container-fluid">
 		<form action="" method="post">
 		<input type="hidden" name="id" value="{$film.id}">
+		<input type="hidden"name="poster" value="{$film.poster}">
 		<table>
 			<tbody>
 				<tr>
@@ -36,10 +37,10 @@
 		<div class="infos col-xs-12 col-md-6">
 			<p class="title">{$film.title}</p>
 			<hr>
-			<p class="description">
-			<span class="show cat70">{$film.shortdesc|truncate:70:"":true}
-			<span class="hidden fullDesc">{$film.shortdesc|substr:80:500}</span>
-			<span class="click btn btn-default btn-xs">...</span></span>
+			<p class="description show cat70">
+			{$film.shortdesc|substr:0:70}
+			<span class="hidden fullDesc">{$film.shortdesc|substr:70:500}</span>
+			<span class="click btn btn-default btn-xs">...</span>
 			</p>
 		</div>
 	</div>
