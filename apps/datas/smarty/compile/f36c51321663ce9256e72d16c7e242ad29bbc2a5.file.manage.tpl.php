@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-13 22:17:17
+=======
 <?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 07:56:26
+>>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
          compiled from "apps\templates\manage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7392565b69685cf965-16702727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +17,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
+<<<<<<< HEAD
+      1 => 1450040663,
+=======
       1 => 1449758663,
+>>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
       2 => 'file',
     ),
   ),
@@ -81,8 +89,9 @@ admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>
+		
 	</nav>
-
+	
   
 <div id="addFilm">
 	<div class="filmEdit">
@@ -134,6 +143,26 @@ filmo">Annuler</a></span>
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
+<<<<<<< HEAD
+<script src="assets/js/vendor/nanobar.js"></script>
+<!-- <script>
+	var options = {
+	bg: '#ffc715',
+
+	// leave target blank for global nanobar
+	target: document.getElementById('loader'),
+
+};
+
+var nanobar = new Nanobar( options );
+	nanobar.go(50);
+	$(window).load(function() {
+    	nanobar.go(100);
+	});
+</script> -->
+=======
 <script src="/assets/js/vendor/jquery.rateit.min.js"></script>
+>>>>>>> a61f14dc731dfb6c1d3cf0d2f749dfaa05024c7a
 </body>
-</html><?php }} ?>
+</html>
+<?php }} ?>
