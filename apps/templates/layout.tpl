@@ -46,8 +46,9 @@
 				</ul>
 			</div>
 		</div>
+		
 	</nav>
-
+	
   {block name=body}{/block}
 
 
@@ -64,6 +65,21 @@
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
+<script src="assets/js/vendor/nanobar.js"></script>
+<!-- <script>
+	var options = {
+	bg: '#ffc715',
 
+	// leave target blank for global nanobar
+	target: document.getElementById('loader'),
+
+};
+
+var nanobar = new Nanobar( options );
+	nanobar.go(50);
+	$(window).load(function() {
+    	nanobar.go(100);
+	});
+</script> -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-07 20:01:07
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-13 22:04:53
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2262456580bad71f2f7-36941646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1448817256,
+      1 => 1450040663,
       2 => 'file',
     ),
   ),
@@ -81,8 +81,9 @@ admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>
+		
 	</nav>
-
+	
   
 
 <div id="filmo">
@@ -162,6 +163,22 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 <script src="assets/js/vendor/dropdown.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
+<script src="assets/js/vendor/nanobar.js"></script>
+<!-- <script>
+	var options = {
+	bg: '#ffc715',
 
+	// leave target blank for global nanobar
+	target: document.getElementById('loader'),
+
+};
+
+var nanobar = new Nanobar( options );
+	nanobar.go(50);
+	$(window).load(function() {
+    	nanobar.go(100);
+	});
+</script> -->
 </body>
-</html><?php }} ?>
+</html>
+<?php }} ?>
