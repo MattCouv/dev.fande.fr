@@ -100,6 +100,18 @@ elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
 	deletefilmconf_action( (int) $_POST['id'],$_POST['poster'] );
  	/*redirect('filmo');*/
 }
+elseif ('ajx-rate'==$command) {
+	$rate = (int) $_POST['rate'];
+	$idmovie = (int) $_POST['idmovie'];
+	// lire les informations sur le films ($rates, $crates)
+	$oMovie = new Movie( $fpdo );
+	extract( $oMovie->get($idmovie) );
+	// mettre à jour le vote du lien
+	$crates = (int)$crates + 1;
+	$rates = $rates * (1 - 1 / $crates) + $rate / $crates;
+	$oMovie->edit($idmovie, array('crates' => $crates, 'rates' => $rates));
+	echo number_format($rates, 1);
+}
 
 //page 404
 else{

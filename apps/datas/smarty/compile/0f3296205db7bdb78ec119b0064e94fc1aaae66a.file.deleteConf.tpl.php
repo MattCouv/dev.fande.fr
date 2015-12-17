@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-17 13:46:34
-         compiled from "apps\templates\manage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29842566fbfa578a922-24615483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-17 17:24:04
+         compiled from "apps\templates\deleteConf.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:203565672e1a442e054-60999251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'f36c51321663ce9256e72d16c7e242ad29bbc2a5' => 
+    '0f3296205db7bdb78ec119b0064e94fc1aaae66a' => 
     array (
-      0 => 'apps\\templates\\manage.tpl',
-      1 => 1450162733,
+      0 => 'apps\\templates\\deleteConf.tpl',
+      1 => 1450358000,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29842566fbfa578a922-24615483',
+  'nocache_hash' => '203565672e1a442e054-60999251',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_566fbfa5831346_08259851',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5672e1a447aba7_29777316',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_566fbfa5831346_08259851')) {function content_566fbfa5831346_08259851($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5672e1a447aba7_29777316')) {function content_5672e1a447aba7_29777316($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -85,40 +85,30 @@ admin-login">Login</a></li>
 	</nav>
 	
   
-<div id="addFilm">
-	<div class="filmEdit">
-	<form method="post" action="manage-film-save" enctype="multipart/form-data">
-	<input type="hidden"name="id"value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['id'])===null||$tmp==='' ? '' : $tmp);?>
+	<div id="delete">
+	<div class="filmDel">
+		<form method="post">
+		<input type="hidden"name="id" value="<?php echo $_POST['id'];?>
 ">
-	  <div class="form-group">
-	    <label for="title">Titre</label>
-	    <input type="text" class="form-control" name="title" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['title'])===null||$tmp==='' ? '' : $tmp);?>
+		<input type="hidden"name="poster" value="<?php echo $_POST['poster'];?>
 ">
-	  </div>
-	  <div class="form-group">
-		  <label for="shortdesc">Résumé</label>
-		  <textarea class="form-control" name="shortdesc" rows="3"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['shortdesc'])===null||$tmp==='' ? '' : $tmp);?>
-</textarea>
-	  </div>
-	  <div class="form-group">
-	    <label for="year">Année</label>
-	    <input type="text" class="form-control" name="year" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['film']->value['year'])===null||$tmp==='' ? '' : $tmp);?>
-">
-	  </div>
-	  <div class="poster">
-	  		<img id="blah" src="#" alt="lol">
-			<img id="right"src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
-" class="img-polaroid"/>
+		<table>
+			<tbody>
+				<tr>
+					<td>Valider</td>
+					<td>Annuler</td>
+				</tr>
+				<tr>
+					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
+delete-film-save" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-ok"></span></button></td>
+					<td><a href="<?php echo @constant('ROOT');?>
+filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
 	</div>
-	  <div class="form-group">
-	    <label for="poster">Fichier poster</label>
-	    <input type="file" id="imgInp" name="poster">
-	  </div>
-	  <button type="submit" class="btn btn-default">Ajouter</button><span><a href="<?php echo @constant('ROOT');?>
-filmo">Annuler</a></span>
-	</form>
 	</div>
-</div>
 
 
 

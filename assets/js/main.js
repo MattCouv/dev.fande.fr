@@ -30,4 +30,24 @@ $("#imgInp").change(function(){
     readURL(this);
 });
 
+// clic sur une étoile sur toutes les div de classe .rateit
+$(".rateit").on('rated', function(event){
+	var $vote = $(this),
+	valeur = $vote.rateit('value'),
+	idmovie = $vote.rateit('idmovie');
+	$vote.rateit('readonly',true);
+	alert('la valeur du vote actuel est: ' + valeur+' du film '+idmovie);
+	$.ajax({
+		url: 'index.php?ajx-rate', // la page appelée avec la commande spécifique
+		data: { idmovie: idmovie, rate: valeur },
+		type: 'POST', // la méthode
+		// data contient les données retournées par le serveur
+		success: function ( data ) {
+			console.log( data );
+		$vote.siblings('p').find('.rate').text(data);
+		}
+	});
+});
+
+
 });

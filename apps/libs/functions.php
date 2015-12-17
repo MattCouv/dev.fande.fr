@@ -8,10 +8,15 @@ function get_command() {
 
   $url = parse_url( $_SERVER['REQUEST_URI'] );
  // debug ( $url, '$url' );
-  $url =  str_replace( ROOT_URL, '', $url['path'] );
-  // enlever le / éventuel au début
-  $url  = str_replace( '/', '', $url);
-  return $url;
+ // // traitement ajax?
+ if ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) ) {
+  return $url['query'];
+  } else {
+    $url =  str_replace( ROOT_URL, '', $url['path'] );
+    // enlever le / éventuel au début
+    $url  = str_replace( '/', '', $url);
+    return $url;
+  }
 }
 
 /**

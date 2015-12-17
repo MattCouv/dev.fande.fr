@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-15 12:27:32
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-17 17:31:37
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11027566fbf91309ed4-67352321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1450178851,
+      1 => 1450369892,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450177823,
+      1 => 1450355796,
       2 => 'file',
     ),
   ),
@@ -100,7 +100,7 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 	<section class="film">
 	<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 		<div class="adminEdit container-fluid">
-		<form action="" method="post">
+		<form method="post">
 		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
 ">
 		<input type="hidden"name="poster" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
@@ -108,8 +108,10 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 		<table>
 			<tbody>
 				<tr>
-					<td><button type="submit" formaction="delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
-					<td><button type="submit" formaction="edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
+					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
+delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
+					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
+edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
 				</tr>
 			</tbody>
 		</table>
@@ -124,8 +126,18 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 		<div class="poster col-xs-10 col-md-5">
 			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
 " class="img-polaroid"/>
-			<span data-productid="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
-" class="rateit"></span><input class="btn"type="button" value="Voter">
+			<div>
+				<p>[<span class="rate"><?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
+</span>/5]</p>
+				<input type="range" min="0" max="5" value="0" step="1" id="rate<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" name="r" />
+				<input type="hidden" name="idmovie" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" />
+				<div class="rateit" data-rateit-idmovie="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" data-rateit-backingfld="#rate<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+"></div>
+			</div>
+			
 		</div>
 		<div class="infos col-xs-12 col-md-6">
 			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>

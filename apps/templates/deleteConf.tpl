@@ -13,8 +13,8 @@
 					<td>Annuler</td>
 				</tr>
 				<tr>
-					<td><button type="submit" formaction="delete-film-save" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-ok"></span></button></td>
-					<td><a href="filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span></a></td>
+					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-film-save" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-ok"></span></button></td>
+					<td><a href="{$smarty.const.ROOT}filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span></a></td>
 				</tr>
 			</tbody>
 		</table>

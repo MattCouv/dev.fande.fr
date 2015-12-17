@@ -11,14 +11,14 @@
 	<section class="film">
 	{if isset( $smarty.session.admin ) && $smarty.session.admin}
 		<div class="adminEdit container-fluid">
-		<form action="" method="post">
+		<form method="post">
 		<input type="hidden" name="id" value="{$film.id}">
 		<input type="hidden"name="poster" value="{$film.poster}">
 		<table>
 			<tbody>
 				<tr>
-					<td><button type="submit" formaction="delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
-					<td><button type="submit" formaction="edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
+					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-film" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> Eliminer le film</td>
+					<td><button type="submit" formaction="{$smarty.const.ROOT}edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
 				</tr>
 			</tbody>
 		</table>
@@ -31,7 +31,13 @@
 		</div>
 		<div class="poster col-xs-10 col-md-5">
 			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
-			<span data-productid="{$film.id}" class="rateit"></span><input class="btn"type="button" value="Voter">
+			<div>
+				<p>[<span class="rate">{$film.rates}</span>/5]</p>
+				<input type="range" min="0" max="5" value="0" step="1" id="rate{$film.id}" name="r" />
+				<input type="hidden" name="idmovie" value="{$film.id}" />
+				<div class="rateit" data-rateit-idmovie="{$film.id}" data-rateit-backingfld="#rate{$film.id}"></div>
+			</div>
+			
 		</div>
 		<div class="infos col-xs-12 col-md-6">
 			<p class="title">{$film.title}</p>
