@@ -1,4 +1,6 @@
 <?php
+/* Set internal character encoding to UTF-8 */
+mb_internal_encoding("UTF-8");
 /** Nom de la base de données */
 define('DB_NAME', 'm3202.fande');
 /** Utilisateur de la base de données MySQL. */
@@ -13,7 +15,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_PERSISTANT', true);
 
 /** Préfixe de base de données pour les tables.*/
-define('TABLE_PREFIX', 'fande_');
+define('TABLE_PREFIX', 'mcouvreur_fande_');
 
 /** indique si le débuguage est activé */
 define('DEBUG'			, true);

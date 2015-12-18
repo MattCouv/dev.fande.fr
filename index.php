@@ -98,7 +98,7 @@ elseif ('delete-film'==$command && isset( $_POST['id'])&& $_SESSION['admin']){
 elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
 {
 	deletefilmconf_action( (int) $_POST['id'],$_POST['poster'] );
- 	/*redirect('filmo');*/
+ 	redirect('filmo');
 }
 elseif ('ajx-rate'==$command) {
 	$rate = (int) $_POST['rate'];

@@ -36,7 +36,6 @@ $(".rateit").on('rated', function(event){
 	valeur = $vote.rateit('value'),
 	idmovie = $vote.rateit('idmovie');
 	$vote.rateit('readonly',true);
-	alert('la valeur du vote actuel est: ' + valeur+' du film '+idmovie);
 	$.ajax({
 		url: 'index.php?ajx-rate', // la page appelée avec la commande spécifique
 		data: { idmovie: idmovie, rate: valeur },

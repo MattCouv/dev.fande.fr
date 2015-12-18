@@ -33,7 +33,7 @@
 			<img src="assets/img/films/{$film.poster}" class="img-polaroid"/>
 			<div>
 				<p>[<span class="rate">{$film.rates}</span>/5]</p>
-				<input type="range" min="0" max="5" value="0" step="1" id="rate{$film.id}" name="r" />
+				<input type="range" min="0" max="5" value="{$film.rates}" step="1" id="rate{$film.id}" name="r" />
 				<input type="hidden" name="idmovie" value="{$film.id}" />
 				<div class="rateit" data-rateit-idmovie="{$film.id}" data-rateit-backingfld="#rate{$film.id}"></div>
 			</div>
