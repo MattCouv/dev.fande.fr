@@ -33,45 +33,56 @@ function redirect( $url ) {
   @param array $file contient $_FILE['poster'], name, tpm_name, type.
   @return array $err type boolean et $filename qui est un string avec le nouveau nom de l'image
 */
+  /**
+   * [add_images description]
+   * @param [array] $file [prend la valeur de $_FILES['poster']]
+   */
 function add_images($file){
-  debug($file,'file');
+  /*on regarde le type MIME de l'image et on fait le traitement si le type est jpeg pjpeg ou png*/
   if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg'||$file['type']=='image/png') {
-
+    /*création de dir2save qui reférence le répertoir de sauvegarde des images*/
     $dir2save = ROOT_DIR . '/assets/img/films';
-    debug( $dir2save, "dossier d'enregistrement" );
+    /*nom temporel de l'image*/
     $image_source = $file['tmp_name'];
+    /*lister les dimensions de l'image*/
     list($width, $height) = getimagesize($image_source);
-    // lire l'image d'origine
+    /*si l'image est un jpeg ou un pjpeg*/
     if ($file['type']=='image/jpeg'||$file['type']=='image/pjpeg') {
-      $img = imagecreatefromjpeg( $image_source );
+      // lire l'image d'origine
+      $src_image = imagecreatefromjpeg( $image_source );
     }else{
-      $img = imagecreatefrompng( $image_source );
+      //si l'image est un png
+      $src_image = imagecreatefrompng( $image_source );
     }
-    // définir une nouvelle image avec les dimensions autorisés
+    // définir une nouvelle image avec les dimensions autorisés new_width et new_height
     $new_width=800;
+    //new height= 800/(width/height)
     $new_height=$new_width/($width/$height);
-    debug($new_width,'largeur');
-    debug($new_height,'hauteur');
-    $img2 = ImageCreateTrueColor( $new_width, $new_height );
-    imagecopyResampled( $img2, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
-    imagejpeg( $img2, $image_source );
+    //Retourne un identifiant de ressource d'image $dst_image
+    $dst_image = ImageCreateTrueColor( $new_width, $new_height );
+    //retaillement de l'image
+    imagecopyResampled( $dst_image, $src_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+    //création d'une image jpeg
+    imagejpeg( $dst_image, $image_source );
     // effacer les zones mémoire
-    imagedestroy($img);
-    imagedestroy($img2);
+    imagedestroy($src_image);
+    imagedestroy($dst_image);
     //decomposition du nom de l'image et son extension
     $path_parts = pathinfo($file["name"]);
     //ajout du timestamp
     $filename = $path_parts['filename']."_".microtime(true).'.'.$path_parts['extension'];
+    //destination de l'image
     $image_dest = "$dir2save/$filename";
+    //vérification que le téléchargement c'est bien réalisé
     if (move_uploaded_file( $image_source, $image_dest )) {
-    debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
+    //debug( "Le fichier est valide; il a été téléchargé avec succès. \n" );
     $error=false;
     } else {
-    debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
+    //debug( " PROBLÈME pendant le téléchargement du fichier!!\n" );
     $error=true;
     }
   }else {
-  debug( " PROBLÈME le fichier n'est pas un png!!\n" );
+  //debug( " PROBLÈME le fichier n'est pas un png!!\n" );
   $error=true;
   $filename="";
   }
@@ -84,7 +95,7 @@ function add_images($file){
 @param array $data qui contient $_POST
 @return array $err type boolean et $movie qui rajoute a $_FILE['poster'] la variable $fname;
 */
-function isposterset($file,$data){
+function isPosterSet($file,$data){
   $movie=$data;
   if (!empty($file['poster']['name'])) {
     list($err,$fname)=add_images($file['poster']);

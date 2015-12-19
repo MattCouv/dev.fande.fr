@@ -33,12 +33,7 @@
 					<li><a href="{$smarty.const.ROOT}quizz">Le QUIZZ</a></li>
 					{if isset( $smarty.session.admin ) && $smarty.session.admin}
 						<li><a href="{$smarty.const.ROOT}logout">
-							<div class="icon-lock" style="float: left">
-							    <div class="lock-top-1" style="background-color: #E5E9EA"></div>
-							    <div class="lock-top-2"></div>
-							    <div class="lock-body" style="background-color: #E5E9EA"></div>
-							    <div class="lock-hole"></div>
-	  						</div>
+							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>
 					{else}
 					<li><a href="{$smarty.const.ROOT}admin-login">Login</a></li>
@@ -47,9 +42,7 @@
 				</ul>
 			</div>
 		</div>
-		
 	</nav>
-	
   {block name=body}{/block}
 
 

@@ -17,7 +17,16 @@ function filmo_action(){
 	//Affichage
 	$smarty->display('filmo.tpl');
 }
+//Affiche la page de la filmographie
 
+function quizz_action(){
+	global $smarty,$fpdo;
+	$oQuizz = new Quizz( $fpdo );
+	$smarty->assign('quizzs', $oQuizz->getAll() );
+
+	//Affichage
+	$smarty->display('quizz.tpl');
+}
 //affiche le page de login de l'admin
 function login_action(){
 	global $smarty,$fpdo;
@@ -49,7 +58,8 @@ function error_action(){
 function addfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
-	list($err,$movie)=isposterset($file,$_POST);
+	//verification si existance de l'image téléchargent isPosterSet
+	list($err,$movie)=isPosterSet($file,$_POST);
 	if ($err==true) {
 		return $err;
 	}else{
@@ -80,8 +90,8 @@ function editfilm_action( $id ) {
 function editfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
-
-	list($err,$movie)=isposterset($file,$_POST);
+	//verification si existance de l'image téléchargent isPosterSet
+	list($err,$movie)=isPosterSet($file,$_POST);
 	if ($err==true) {
 		return $err;
 	}else{

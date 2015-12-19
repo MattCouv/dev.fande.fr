@@ -18,6 +18,11 @@ elseif ('filmo' == $command){
 	//afficher un billet
 	filmo_action();
 }
+// afficher la page de filmographie
+elseif ('quizz' == $command){
+	//afficher un billet
+	quizz_action();
+}
 //affiche la page de login de l'admin
 elseif ('admin-login' == $command){
 	//afficher un billet
