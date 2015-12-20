@@ -42,11 +42,11 @@ $(".rateit").on('rated', function(event){
 		type: 'POST', // la méthode
 		// data contient les données retournées par le serveur
 		success: function ( data ) {
-			console.log( data );
 		$vote.siblings('p').find('.rate').text(data);
 		}
 	});
 });
+
 
 
 });

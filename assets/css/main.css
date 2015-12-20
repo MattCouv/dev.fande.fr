@@ -5,7 +5,6 @@
 }
 /* ===============================layout============================================= */
 html, body, .wraper{
-	height: 100%;
 	margin: 0;
 }
 .wraper{
@@ -15,9 +14,9 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete,#error{
+#welcome,#filmo,#addFilm,#delete,#error,#quizzs{
 	padding-top: 50px;
-	padding-bottom: 80px;
+	/* padding-bottom: 80px; */
 }
 .footer{
 	text-align: center;
@@ -171,67 +170,24 @@ table,td{
 	margin: 0 auto;
 	color: #000;
 }
-/* ======================lock icon============================== */
-.icon-lock {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  overflow: hidden;
-  margin-left: 25px;
-  margin-bottom: 25px;
+/* ================================quizz======================== */
+.quizzRow{
+	width: 100%;
+	padding:50px;
+	background: #ccc;
 }
-
-.icon-lock .lock-top-1 {
-  width: 40%;
-  height: 40%;
-  position: absolute;
-  left: 50%;
-  margin-left: -20%;
-  top: 14%;
-  background-color: #000;
-  border-radius: 40%;
+.quizzContainer{
+	border-radius: 10px;
+	background-color: #fff;
+	overflow: hidden;
 }
-
-.icon-lock .lock-top-2 {
-  width: 24%;
-  height: 40%;
-  position: absolute;
-  left: 50%;
-  margin-left: -12%;
-  top: 22%;
-  background-color: #151517;
-  border-radius: 25%;
+.quizzHeader{
+	color: #000;
+	background: #ffc715;
+	text-align:center;
+	padding: 5px;
 }
-
-.icon-lock .lock-body {
-  width: 60%;
-  height: 48%;
-  position: absolute;
-  left: 50%;
-  margin-left: -30%;
-  bottom: 11%;
-  background-color: #000;
-  border-radius: 15%;
-}
-
-.icon-lock .lock-hole {
-  width: 16%;
-  height: 16%;
-  position: absolute;
-  left: 50%;
-  margin-left: -8%;
-  top: 51%;
-  border-radius: 100%;
-  background-color: #151517;
-}
-
-.icon-lock .lock-hole:after {
-  content: "";
-  width: 43%;
-  height: 78%;
-  position: absolute;
-  left: 50%;
-  margin-left: -20%;
-  top: 100%;
-  background-color: inherit;
+.quizzQuestionContainer{
+	background: #fff;
+	padding:10px;
 }

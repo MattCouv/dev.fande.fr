@@ -11,13 +11,13 @@
 	<section class="film">
 	{if isset( $smarty.session.admin ) && $smarty.session.admin}
 		<div class="adminEdit container-fluid">
-		<form method="post">
+		<form>
 		<input type="hidden" name="id" value="{$film.id}">
 		<input type="hidden"name="poster" value="{$film.poster}">
 		<table>
 			<tbody>
 				<tr>
-					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-film" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le film</td>
+					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-film" formmethod="get" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le film</td>
 					<td><button type="submit" formaction="{$smarty.const.ROOT}edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
 				</tr>
 			</tbody>

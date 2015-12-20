@@ -50,7 +50,8 @@ elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_P
 		$_SESSION['admin'] = true;
 	}else{
 		// si ça ne fonctionne pas redirestionne vers admin login
-		redirect('admin-login');
+		debug($_SESSION['login'],'session');
+		/*redirect('admin-login');*/
 	}
 }
 //Permet de ce déconnecté de la session et la détruire
@@ -95,16 +96,18 @@ elseif ( 'edit-film' == $command && isset( $_POST['id'] ) && $_SESSION['admin'])
 {
  	editfilm_action( (int) $_POST['id'] );
 }
-//== affiche page qui confirme la deletion  ===========================================
-elseif ('delete-film'==$command && isset( $_POST['id'])&& $_SESSION['admin']){
-	deletefilm_action( (int) $_POST['id'] ,$_POST['poster']);
-}
+//== affiche page qui confirme la deletion  ==========================================
 //==remove film ==============================================
-elseif ( 'delete-film-save' == $command && isset( $_POST['id'] ) )
-{
-	deletefilmconf_action( (int) $_POST['id'],$_POST['poster'] );
- 	redirect('filmo');
+elseif ('delete-film'==$command && $_SESSION['admin']){
+	if(isset( $_GET['id'])){
+		deletefilm_action($_GET['id'],null);
+	}
+	if (isset( $_POST['id'])) {
+		deletefilm_action($_POST['id'],$_POST['poster']);
+	}
 }
+
+
 elseif ('ajx-rate'==$command) {
 	$rate = (int) $_POST['rate'];
 	$idmovie = (int) $_POST['idmovie'];

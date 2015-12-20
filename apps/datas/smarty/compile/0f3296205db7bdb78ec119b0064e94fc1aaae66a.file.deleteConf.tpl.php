@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-18 10:56:37
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-19 14:56:11
          compiled from "apps\templates\deleteConf.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:203565672e1a442e054-60999251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0f3296205db7bdb78ec119b0064e94fc1aaae66a' => 
     array (
       0 => 'apps\\templates\\deleteConf.tpl',
-      1 => 1450428066,
+      1 => 1450358000,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450177823,
+      1 => 1450531541,
       2 => 'file',
     ),
   ),
@@ -66,12 +66,7 @@ quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 						<li><a href="<?php echo @constant('ROOT');?>
 logout">
-							<div class="icon-lock" style="float: left">
-							    <div class="lock-top-1" style="background-color: #E5E9EA"></div>
-							    <div class="lock-top-2"></div>
-							    <div class="lock-body" style="background-color: #E5E9EA"></div>
-							    <div class="lock-hole"></div>
-	  						</div>
+							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>
 					<?php } else { ?>
 					<li><a href="<?php echo @constant('ROOT');?>
@@ -81,9 +76,7 @@ admin-login">Login</a></li>
 				</ul>
 			</div>
 		</div>
-		
 	</nav>
-	
   
 	<div id="delete">
 	<div class="filmDel">

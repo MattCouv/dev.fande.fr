@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-19 11:47:16
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 01:00:19
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11027566fbf91309ed4-67352321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1450521852,
+      1 => 1450569359,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450522022,
+      1 => 1450531541,
       2 => 'file',
     ),
   ),
@@ -93,7 +93,7 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 	<section class="film">
 	<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 		<div class="adminEdit container-fluid">
-		<form method="post">
+		<form>
 		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
 ">
 		<input type="hidden"name="poster" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
@@ -102,7 +102,7 @@ $_smarty_tpl->tpl_vars['film']->_loop = true;
 			<tbody>
 				<tr>
 					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-film" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le film</td>
+delete-film" formmethod="get" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le film</td>
 					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
 edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
 				</tr>

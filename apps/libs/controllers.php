@@ -23,7 +23,6 @@ function quizz_action(){
 	global $smarty,$fpdo;
 	$oQuizz = new Quizz( $fpdo );
 	$smarty->assign('quizzs', $oQuizz->getAll() );
-
 	//Affichage
 	$smarty->display('quizz.tpl');
 }
@@ -33,17 +32,20 @@ function login_action(){
 	//affichage
 	$smarty->display('login.tpl');
 }
-//affiche la page de confirmation de suppression du film
-function deletefilm_action(){
-	global $smarty;
-	$smarty->display('deleteConf.tpl');
-}
-//confirmation remove film from database
-function deletefilmconf_action($id,$image){
+//affiche la page de confirmation de suppression du film et supprime le film
+function deletefilm_action($id,$image){
 	global $smarty, $fpdo;
-	$oMovie = new Movie( $fpdo );
-	$oMovie->delete($id);
-	deleteImage($image);
+	if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+        $smarty->display('delete.tpl');
+    }
+	if ( !empty($_POST)) {
+        // delete data
+        $oMovie = new Movie( $fpdo );
+		$oMovie->delete($id);
+		deleteImage($image);
+		/*redirect('filmo');*/
+    }
 }
 function addfilm_action(){
 	global $smarty;

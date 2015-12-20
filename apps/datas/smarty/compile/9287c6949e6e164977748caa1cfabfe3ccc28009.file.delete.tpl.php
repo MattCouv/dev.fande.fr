@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 00:34:39
-         compiled from "apps\templates\quizz.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12805675434b9ce690-59733451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 01:22:51
+         compiled from "apps\templates\delete.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:314465675f0847d73c4-38673041%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
+    '9287c6949e6e164977748caa1cfabfe3ccc28009' => 
     array (
-      0 => 'apps\\templates\\quizz.tpl',
-      1 => 1450567908,
+      0 => 'apps\\templates\\delete.tpl',
+      1 => 1450570969,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12805675434b9ce690-59733451',
+  'nocache_hash' => '314465675f0847d73c4-38673041',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5675434bf245b0_92623531',
+  'unifunc' => 'content_5675f084825427_01572079',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5675434bf245b0_92623531')) {function content_5675434bf245b0_92623531($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5675f084825427_01572079')) {function content_5675f084825427_01572079($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -78,57 +78,30 @@ admin-login">Login</a></li>
 		</div>
 	</nav>
   
-
-<div id="quizzs">
-<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-<div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
-add-quizz" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un quizz</div>
-<?php }?>
-<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['quizzs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['quizz']->key => $_smarty_tpl->tpl_vars['quizz']->value) {
-$_smarty_tpl->tpl_vars['quizz']->_loop = true;
-?>
-	<section class="quizz">
-	<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-		<div class="adminEdit container-fluid">
+	<div id="delete">
+	<div class="filmDel">
 		<form method="post">
-		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+		<input type="hidden"name="id" value="<?php echo $_GET['id'];?>
+">
+		<input type="hidden"name="poster" value="<?php echo $_GET['poster'];?>
 ">
 		<table>
 			<tbody>
 				<tr>
+					<td>Valider</td>
+					<td>Annuler</td>
+				</tr>
+				<tr>
 					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-quizz" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
-					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
+delete-film" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-ok"></span></button></td>
+					<td><a href="<?php echo @constant('ROOT');?>
+filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span></a></td>
 				</tr>
 			</tbody>
 		</table>
 		</form>
-		</div>
-	<?php }?>
-		<div class="quizzRow">
-			<div class="quizzContainer">
-				<div class="quizzHeader">
-					<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['description'];?>
-</h2>
-				</div>
-				<div class="quizzQuestionContainer">
-					<h3>sdflkjghslkdjfhgkjsfdgmlkjdsfmlkjqmlkdjsf</h3>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-				</div>
-			</div>
-			
-		</div>
-	</section>
-
-	<?php } ?>
-</div>
-
+	</div>
+	</div>
 
 
 
