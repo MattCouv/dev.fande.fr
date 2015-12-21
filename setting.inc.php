@@ -18,7 +18,7 @@ include ('apps/models/base.class.php');
 include ('apps/models/movie.class.php');
 include ('apps/models/parameter.class.php');
 include ('apps/models/quizz.class.php');
-
+include ('apps/models/question.class.php');
 
 // objet DB
 $pdo = new PDO(

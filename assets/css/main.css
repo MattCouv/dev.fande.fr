@@ -14,15 +14,15 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete,#error,#quizzs{
+#welcome,#filmo,#addFilm,#delete,#error,#login,#quizzs{
 	padding-top: 50px;
-	/* padding-bottom: 80px; */
+	padding-bottom: 50px;
 }
 .footer{
 	text-align: center;
 	bottom: 0;
-	margin-top: 20px;
-	height: 50px;
+	height: 70px;
+	padding-top: 20px;
 	line-height: 30px;
 	background: #222;
 	color: #fff;
@@ -171,10 +171,12 @@ table,td{
 	color: #000;
 }
 /* ================================quizz======================== */
+#quizzs{
+	background: #ccc;
+}
 .quizzRow{
 	width: 100%;
 	padding:50px;
-	background: #ccc;
 }
 .quizzContainer{
 	border-radius: 10px;

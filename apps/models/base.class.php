@@ -74,6 +74,10 @@ class Base {
     }
   }
 
+  public function selectAll(){
+    return $this->fpdo->from( $this->table )->select('mcouvreur_fande_questions:TextQ');
+  }
+
   /**
    * Effacer un élément.
    * @param integer $id  identifiant à effacer.

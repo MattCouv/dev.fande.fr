@@ -22,9 +22,22 @@ function filmo_action(){
 function quizz_action(){
 	global $smarty,$fpdo;
 	$oQuizz = new Quizz( $fpdo );
-	$smarty->assign('quizzs', $oQuizz->getAll() );
+	$quizzs = $oQuizz->selectAll();
+	/*$id_quizz=[];
+		for ($i=0; $i < sizeof($quizzs); $i++) {
+			array_push($id_quizz, $quizzs[$i]['id']);
+		}*/
+	debug($quizzs,'quizzs');
+	/*debug($id_quizz,'quizz id');*/
+	/*question_action($id_quizz);*/
 	//Affichage
-	$smarty->display('quizz.tpl');
+	/*$smarty->display('quizz.tpl');*/
+}
+//get all question from id_quizz
+function question_action($id_quizz){
+	$oQuestion = new Question($fpdo);
+	$params['where']="id_quizz".','.$id_quizz;
+	$smarty->assign('questions', $oQuizz->getAll($params['where']));
 }
 //affiche le page de login de l'admin
 function login_action(){
