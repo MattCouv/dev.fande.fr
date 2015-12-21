@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-19 14:40:36
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-21 15:48:52
          compiled from "apps\templates\login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23759566fbf98727789-97453314%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f395e4caa02c27ef064c44319253b3b7f0b566ac' => 
     array (
       0 => 'apps\\templates\\login.tpl',
-      1 => 1448820383,
+      1 => 1450709189,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450531541,
+      1 => 1450628584,
       2 => 'file',
     ),
   ),
@@ -80,20 +80,21 @@ admin-login">Login</a></li>
   
 <div id="login">
 	<div class="formContainer">
-	<form method="post" action="login-check">
-	<table>
-		<tbody>
-			<tr>
-				<td><label for="admin_name">Utilisateur</label></td>
-				<td><label for="admin_pwd">Mot de passe</label></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="admin_name" value="admin"></td>
-				<td><input type="password" name="admin_pwd" value="secret"></td>
-				<td><input type="submit" class="btn btn-primary"value="Login"></td>
-			</tr>
-		</tbody>
-	</table>
+	<form class="form-inline" method="post" action="login-check">
+	  <div class="form-group">
+	    <label class="sr-only" for="admin_name">Utilisateur</label>
+	    <input type="text" class="form-control" id="admin_name" name="admin_name" value="admin" placeholder="utilisateur"> 
+	  </div>
+	  <div class="form-group">
+	    <label class="sr-only" for="admin_pwd">Password</label>
+	    <input type="password" class="form-control" id="admin_pwd" placeholder="Password" name="admin_pwd" value="secret">
+	  </div>
+	  <div class="checkbox">
+	    <label>
+	      <input type="checkbox"> Remember me
+	    </label>
+	  </div>
+	  <button type="submit" class="btn btn-default">Sign in</button>
 	</form>
 	</div>
 </div>

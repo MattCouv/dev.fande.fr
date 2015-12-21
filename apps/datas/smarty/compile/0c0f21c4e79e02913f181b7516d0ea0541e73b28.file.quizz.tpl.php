@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 18:11:09
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-21 18:04:26
          compiled from "apps\templates\quizz.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12805675434b9ce690-59733451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
     array (
       0 => 'apps\\templates\\quizz.tpl',
-      1 => 1450631468,
+      1 => 1450717452,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450531541,
+      1 => 1450628584,
       2 => 'file',
     ),
   ),
@@ -79,55 +79,54 @@ admin-login">Login</a></li>
 	</nav>
   
 
-<div id="quizzs">
+<div id="quizzs" class="container-fluid">
 <?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 <div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
 add-quizz" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un quizz</div>
 <?php }?>
-<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
+
+	<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['quizzs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['quizz']->key => $_smarty_tpl->tpl_vars['quizz']->value) {
 $_smarty_tpl->tpl_vars['quizz']->_loop = true;
 ?>
-	<section class="quizz">
-	
-		<div class="quizzRow">
-			<div class="quizzContainer">
-				<div class="quizzHeader">
-				<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-					<div class="adminEdit container-fluid">
-					<form method="post">
-					<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-">
-					<table>
-						<tbody>
-							<tr>
-								<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-quizz" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
-								<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
-							</tr>
-						</tbody>
-					</table>
-					</form>
-					</div>
-				<?php }?>
-					<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['description'];?>
-</h2>
-				</div>
-				<div class="quizzQuestionContainer">
-					<h3>sdflkjghslkdjfhgkjsfdgmlkjdsfmlkjqmlkdjsf</h3>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-					<p><input type="checkbox"> This is a check box</p>
-				</div>
-			</div>
-			
-		</div>
-	</section>
+	<section class="row">
 
+	<div class="col-md-4 col-md-offset-1">
+		<a href="<?php echo @constant('ROOT');?>
+quizz?id=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+">
+		<div class="question">
+			<h2>Quizz n°<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+</h2>
+		</div></a>
+		<div class="adminEdit">
+		<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+		<form method="post">
+			<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+">
+			<table>
+			<tbody>
+				<tr>
+					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
+delete-quizz" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
+					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
+edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
+				</tr>
+			</tbody>
+			</table>
+		</form>
+		<?php }?>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<p><?php echo $_smarty_tpl->tpl_vars['quizz']->value['description'];?>
+</p>
+	</div>
+	</section>
 	<?php } ?>
+
+
 </div>
 
 

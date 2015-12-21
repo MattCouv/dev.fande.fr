@@ -22,16 +22,22 @@ function filmo_action(){
 function quizz_action(){
 	global $smarty,$fpdo;
 	$oQuizz = new Quizz( $fpdo );
-	$quizzs = $oQuizz->selectAll();
+	if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+        question_action($id);
+        $smarty->display('question.tpl');
+    }
+	$quizzs = $oQuizz->getAll();
+	$smarty->assign('quizzs', $quizzs );
 	/*$id_quizz=[];
 		for ($i=0; $i < sizeof($quizzs); $i++) {
 			array_push($id_quizz, $quizzs[$i]['id']);
 		}*/
-	debug($quizzs,'quizzs');
+	/*debug($quizzs,'quizzs');*/
 	/*debug($id_quizz,'quizz id');*/
 	/*question_action($id_quizz);*/
 	//Affichage
-	/*$smarty->display('quizz.tpl');*/
+	$smarty->display('quizz.tpl');
 }
 //get all question from id_quizz
 function question_action($id_quizz){
