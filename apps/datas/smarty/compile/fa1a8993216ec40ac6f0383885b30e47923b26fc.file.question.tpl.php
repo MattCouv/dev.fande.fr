@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 12:41:34
-         compiled from "apps\templates\quizz.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12805675434b9ce690-59733451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-21 23:58:16
+         compiled from "apps\templates\question.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19594567857067e7f99-03536421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
+    'fa1a8993216ec40ac6f0383885b30e47923b26fc' => 
     array (
-      0 => 'apps\\templates\\quizz.tpl',
-      1 => 1450729451,
+      0 => 'apps\\templates\\question.tpl',
+      1 => 1450736276,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450724735,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12805675434b9ce690-59733451',
+  'nocache_hash' => '19594567857067e7f99-03536421',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5675434bf245b0_92623531',
+  'unifunc' => 'content_56785706841190_23979441',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5675434bf245b0_92623531')) {function content_5675434bf245b0_92623531($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_56785706841190_23979441')) {function content_56785706841190_23979441($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -63,8 +63,6 @@ filmo">Filmographie</a></li>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 						<li><a href="<?php echo @constant('ROOT');?>
-admin-page">Administration</a></li>
-						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>
@@ -80,57 +78,34 @@ admin-login">Login</a></li>
   
 
 <div id="quizzs" class="container-fluid">
-<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-<div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
-add-quizz" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un quizz</div>
-<?php }?>
+<section class="quizzContainer">
 
-
-	<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['quizzs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['quizz']->key => $_smarty_tpl->tpl_vars['quizz']->value) {
-$_smarty_tpl->tpl_vars['quizz']->_loop = true;
+	<div class="quizzHeader">
+		<h2>Quizz n°<?php echo $_POST['id'];?>
+</h2>
+	</div>
+	<div class="quizzQuestionContainer">
+		<form method="post">
+			<?php  $_smarty_tpl->tpl_vars['question'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['question']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['questions']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['question']->key => $_smarty_tpl->tpl_vars['question']->value) {
+$_smarty_tpl->tpl_vars['question']->_loop = true;
 ?>
-	<section class="row">
-	<form method="post">
-	<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-">
-	<input type="hidden" name="title" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
-">
-	<div class="col-md-4 col-md-offset-1">
-		<div class="question">
-			<h2>Quizz n°<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+				<h2><?php echo $_smarty_tpl->tpl_vars['question']->value['TextQ'];?>
 </h2>
-			<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
-</h2>
-		</div>
-		<div class="adminEdit">
-		<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-			<table>
-			<tbody>
-				<tr>
-					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-quizz" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
-					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
-				</tr>
-			</tbody>
-			</table>
-		<?php }?>
-		</div>
+				<?php  $_smarty_tpl->tpl_vars['answer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['answer']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['answers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['answer']->key => $_smarty_tpl->tpl_vars['answer']->value) {
+$_smarty_tpl->tpl_vars['answer']->_loop = true;
+?>
+				<p><?php echo $_smarty_tpl->tpl_vars['answer']->value['TextA'];?>
+</p>
+				<?php } ?>
+			<?php } ?>
+		</form>
 	</div>
-	<div class="col-md-5">
-		<p><?php echo $_smarty_tpl->tpl_vars['quizz']->value['description'];?>
-</p><button type="submit" formaction="<?php echo @constant('ROOT');?>
-quizz-play" class="btn btn-default">Jouer</button>
-	</div>
-	</form>
-	</section>
-	<?php } ?>
-
-
+</section>
 </div>
-
 
 
 

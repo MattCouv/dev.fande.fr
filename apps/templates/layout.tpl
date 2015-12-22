@@ -29,9 +29,9 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="{$smarty.const.ROOT}">Introduction</a></li>
 					<li><a href="{$smarty.const.ROOT}filmo">Filmographie</a></li>
-					<li><a href="{$smarty.const.ROOT}biblio">Bibliographie</a></li>
 					<li><a href="{$smarty.const.ROOT}quizz">Le QUIZZ</a></li>
 					{if isset( $smarty.session.admin ) && $smarty.session.admin}
+						<li><a href="{$smarty.const.ROOT}admin-page">Administration</a></li>
 						<li><a href="{$smarty.const.ROOT}logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>

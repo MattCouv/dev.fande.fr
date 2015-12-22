@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-21 15:48:52
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 12:41:20
          compiled from "apps\templates\login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23759566fbf98727789-97453314%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f395e4caa02c27ef064c44319253b3b7f0b566ac' => 
     array (
       0 => 'apps\\templates\\login.tpl',
-      1 => 1450709189,
+      1 => 1450724133,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450628584,
+      1 => 1450784477,
       2 => 'file',
     ),
   ),
@@ -60,10 +60,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<li><a href="<?php echo @constant('ROOT');?>
 filmo">Filmographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
-biblio">Bibliographie</a></li>
-					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+						<li><a href="<?php echo @constant('ROOT');?>
+admin-page">Administration</a></li>
 						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>

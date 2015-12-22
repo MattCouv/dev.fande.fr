@@ -67,12 +67,15 @@ class Base {
   public function getAll( $params = array() ) {
 
     $where = isset($params['where']) ? $params['where'] : '';
-    debug($where,'where');
     if ( isset( $params['order'] ) && strlen( $params['order'] ) > 0 ) {
       return $this->fpdo->from( $this->table )->orderBy( $params['order'] )->where( $where )->fetchAll();
     } else {
       return $this->fpdo->from( $this->table )->where( $where )->fetchAll();
     }
+  }
+
+  public function selectAll(){
+    return $this->fpdo->from( $this->table )->select('mcouvreur_fande_questions.TextQ')->fetch();
   }
 
   /**

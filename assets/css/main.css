@@ -14,18 +14,13 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete,#error,#login,#quizzs{
+#welcome,#filmo,#addFilm,#delete,#error,#login,#quizzs,#admin{
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
 .footer{
 	text-align: center;
-	bottom: 0;
-	height: 70px;
 	padding-top: 20px;
-	line-height: 30px;
-	background: #222;
-	color: #fff;
 	width: 100%;
 }
 /* ===================home============================ */
@@ -135,6 +130,10 @@ span.biggest,.title{
 }
 table,td{
 	padding-left: 20px;
+}
+.adminTable{
+	max-width: 600px;
+	margin: 50px auto;
 }
 /* ========================addfilm=============================== */
 #addFilm{

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 17:37:31
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 17:10:45
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11027566fbf91309ed4-67352321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1450628584,
+      1 => 1450800643,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450628584,
+      1 => 1450784477,
       2 => 'file',
     ),
   ),
@@ -60,10 +60,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<li><a href="<?php echo @constant('ROOT');?>
 filmo">Filmographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
-biblio">Bibliographie</a></li>
-					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+						<li><a href="<?php echo @constant('ROOT');?>
+admin-page">Administration</a></li>
 						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
@@ -79,7 +79,7 @@ admin-login">Login</a></li>
 	</nav>
   
 
-<div id="filmo">
+<div id="filmo"  class="container-fluid">
 <?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 <div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
 add-film" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un film</div>
@@ -142,7 +142,7 @@ edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hi
 
 			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
 </span>
-			<span class="click btn btn-default btn-xs">...</span>
+			<span class="click btn btn-default">...</span>
 			</p>
 		</div>
 	</div>

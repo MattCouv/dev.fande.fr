@@ -22,34 +22,44 @@ function filmo_action(){
 function quizz_action(){
 	global $smarty,$fpdo;
 	$oQuizz = new Quizz( $fpdo );
-	if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
-        question_action($id);
-        $smarty->display('question.tpl');
-    }
 	$quizzs = $oQuizz->getAll();
 	$smarty->assign('quizzs', $quizzs );
-	/*$id_quizz=[];
-		for ($i=0; $i < sizeof($quizzs); $i++) {
-			array_push($id_quizz, $quizzs[$i]['id']);
-		}*/
-	/*debug($quizzs,'quizzs');*/
-	/*debug($id_quizz,'quizz id');*/
-	/*question_action($id_quizz);*/
 	//Affichage
 	$smarty->display('quizz.tpl');
 }
-//get all question from id_quizz
-function question_action($id_quizz){
+//display the questions of a quizz
+function quizzplay_action($id_quizz){
+	global $smarty,$fpdo;
 	$oQuestion = new Question($fpdo);
-	$params['where']="id_quizz".','.$id_quizz;
-	$smarty->assign('questions', $oQuizz->getAll($params['where']));
+	$oAnswers = new Answers($fpdo);
+	$param_quizzID=["where"=>["id_quizz"=>$id_quizz]];
+	$question=$oQuestion->getAll($param_quizzID);
+	debug($question,'question');
+	$answer=[];
+	foreach ($question as $key => $value) {
+		if($key=='id'){
+			$param_questionID=["where"=>["id_question"=>$value]];
+			array_push($answer, $oAnswers->getAll($param_questionID));
+		}
+	}
+	debug($answer,'answer');
+	$smarty->assign('questions', $question);
+	//affichage
+	$smarty->display('question.tpl');
 }
 //affiche le page de login de l'admin
 function login_action(){
-	global $smarty,$fpdo;
+	global $smarty;
 	//affichage
 	$smarty->display('login.tpl');
+}
+function adminpage_action(){
+	global $smarty;
+	$smarty->display('admin.tpl');
+}
+function editquizz_action(){
+	global $smarty;
+	$smarty->display('editquizz.tpl');
 }
 //affiche la page de confirmation de suppression du film et supprime le film
 function deletefilm_action($id,$image){
@@ -120,5 +130,8 @@ function editfilmsave_action($data, $file){
 		return $err;
 	}
 }
-
+function error404_action(){
+	global $smarty;
+	$smarty->display('error404.tpl');
+}
 ?>

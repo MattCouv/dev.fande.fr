@@ -9,24 +9,33 @@ $command = get_command();
 
 //== afficher la page d'acceuil de Fan de
 if (''==$command){
-	//afficher les billets
 	home_action();
 }
 
 // afficher la page de filmographie
 elseif ('filmo' == $command){
-	//afficher un billet
 	filmo_action();
 }
 // afficher la page de filmographie
 elseif ('quizz' == $command){
-	//afficher un billet
 	quizz_action();
+}
+//affiche le quizz
+elseif ('quizz-play' == $command && isset( $_POST['id'] )){
+	//afficher un billet
+	quizzplay_action($_POST['id']);
+}
+//affiche la page d'édition du quizz
+elseif ('edit-quizz' == $command && $_SESSION['admin']) {
+	editquizz_action();
 }
 //affiche la page de login de l'admin
 elseif ('admin-login' == $command){
-	//afficher un billet
 	login_action();
+}
+//affiche la page d'administration du site pour l'admin
+elseif ('admin-page' == $command && $_SESSION['admin']) {
+	adminpage_action();
 }
 //vérifie si les paramètre entré son correcte et créer un connexion
 elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_POST['admin_pwd'] )){
@@ -44,7 +53,7 @@ elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_P
 	//Compare les parametre récupéré et les compare a ceux entré
 	if($user==$admin_name && $pwd==$admin_pwd){
 		//si c'est bon redirectionne vers la page filmo
-		redirect('filmo');
+		redirect('admin-page');
 		//inicialise une variable session login et admin
 		$_SESSION['login'] = true;
 		$_SESSION['admin'] = true;
@@ -124,6 +133,6 @@ elseif ('ajx-rate'==$command) {
 //page 404
 else{
 	header('Status: 404 Not Found');
-	echo "<html><body><h1>OUPS la commande n'est pas reconnue </h1></body></html>";
+	error404_action();
 }
 ?>

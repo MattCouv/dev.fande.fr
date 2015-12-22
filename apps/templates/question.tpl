@@ -6,12 +6,15 @@
 <section class="quizzContainer">
 
 	<div class="quizzHeader">
-		<h2>Quizz n°{$smarty.get.id}</h2>
+		<h2>Quizz n°{$smarty.post.id}</h2>
 	</div>
 	<div class="quizzQuestionContainer">
 		<form method="post">
 			{foreach from=$questions item=question}
-				<input type="checkbox">{$question.TextQ}
+				<h2>{$question.TextQ}</h2>
+				{foreach from=$answers item=answer}
+				<p>{$answer.TextA}</p>
+				{/foreach}
 			{/foreach}
 		</form>
 	</div>

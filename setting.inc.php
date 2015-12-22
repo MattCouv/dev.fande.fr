@@ -19,10 +19,9 @@ include ('apps/models/movie.class.php');
 include ('apps/models/parameter.class.php');
 include ('apps/models/quizz.class.php');
 include ('apps/models/question.class.php');
-
+include ('apps/models/answer.class.php');
 // objet DB
-$pdo = new PDO(
-'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, // DSN
+$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, // DSN
  DB_USER, // utilisateur MYSQL
  DB_PASSWORD // mot de passe MYSQL
 );

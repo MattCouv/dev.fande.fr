@@ -1,10 +1,15 @@
 $(document).ready(function(){
-	var $click=$(".click");
+var $click=$(".click");
 
-	$click.click(function(){
-		$(this).siblings(".fullDesc").toggleClass("hidden");
-	});
-	var options = {
+$click.click(function(){
+	$(this).siblings(".fullDesc").toggleClass("hidden");
+});
+
+var $nav = $(".nav");
+
+/*$nav.find;*/
+
+var options = {
 	bg: '#ffc715'
 };
 
@@ -46,6 +51,7 @@ $(".rateit").on('rated', function(event){
 		}
 	});
 });
+
 
 
 

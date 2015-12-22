@@ -30,7 +30,7 @@ define('DEBUG'			, true);
 define('DEBUG_TARGET'	, 'screen');
 
 /** nom relatif de la racine du site */
-define('ROOT_URL', '/dev.fande.fr/'); //sans rewriting
+define('ROOT_URL', '/dev.fande.fr/'); //avec rewriting
 define('ROOT', 'http://localhost:8080' . ROOT_URL);
 define('ROOT_DIR', 'C:/xampp/htdocs/dev.fande.fr' );
 /** Chemin absolu vers le dossier de l'application. */

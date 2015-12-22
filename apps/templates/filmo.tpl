@@ -2,7 +2,7 @@
 {block name=title}Fan de Filmographie{/block}
 {block name=body}
 
-<div id="filmo">
+<div id="filmo"  class="container-fluid">
 {if isset( $smarty.session.admin ) && $smarty.session.admin}
 <div class="adminEdit"><a href="{$smarty.const.ROOT}add-film" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un film</div>
 {/if}
@@ -45,7 +45,7 @@
 			<p class="description show cat70">
 			{$film.shortdesc|substr:0:70}
 			<span class="hidden fullDesc">{$film.shortdesc|substr:70:500}</span>
-			<span class="click btn btn-default btn-xs">...</span>
+			<span class="click btn btn-default">...</span>
 			</p>
 		</div>
 	</div>
