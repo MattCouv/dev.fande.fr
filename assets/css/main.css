@@ -25,7 +25,8 @@ body{
 }
 /* ===================home============================ */
 .top{
-	background: url("https://newevolutiondesigns.com/images/freebies/google-material-design-wallpaper-2.jpg") #444;/**./../img/background.png**/
+	background: url("../img/films/bg.jpg") #444 no-repeat;/**./../img/background.png**/
+	background-size:cover;
 	width: 100%;
 	padding-top: 10px;
 }
@@ -53,15 +54,15 @@ body{
 	margin:0 auto;
 	overflow: hidden;
 }
-span.biggest,.title{
+.biggest{
+	font-size: 3.5em;
+	color: #fff;
 	font-family: Averia;
 }
-.biggest{
-	color: #fff;
-}
-.title{
-	font-size: 80px;
+.top .title{
+	font-size: 2em;
 	text-align: center;
+	background-color: rgba(124, 124, 124, 0.5);
 }
 
 /** ================================la filmographie============================= */

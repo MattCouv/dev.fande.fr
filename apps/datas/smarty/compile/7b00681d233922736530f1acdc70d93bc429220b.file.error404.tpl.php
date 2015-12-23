@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 16:41:11
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 12:40:51
          compiled from "apps\templates\error404.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12015567936785fc918-49985485%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -89,7 +89,7 @@ admin-login">Login</a></li>
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

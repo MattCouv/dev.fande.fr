@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 17:10:45
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 13:06:15
          compiled from "apps\templates\filmo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11027566fbf91309ed4-67352321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
       0 => 'apps\\templates\\filmo.tpl',
-      1 => 1450800643,
+      1 => 1450872295,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -140,7 +140,7 @@ edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hi
 			<p class="description show cat70">
 			<?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],0,70);?>
 
-			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,500);?>
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,5000);?>
 </span>
 			<span class="click btn btn-default">...</span>
 			</p>
@@ -155,7 +155,7 @@ edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hi
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

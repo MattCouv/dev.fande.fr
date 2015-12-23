@@ -44,7 +44,7 @@
 			<hr>
 			<p class="description show cat70">
 			{$film.shortdesc|substr:0:70}
-			<span class="hidden fullDesc">{$film.shortdesc|substr:70:500}</span>
+			<span class="hidden fullDesc">{$film.shortdesc|substr:70:5000}</span>
 			<span class="click btn btn-default">...</span>
 			</p>
 		</div>

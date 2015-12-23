@@ -15,7 +15,6 @@
 	<input type="hidden" name="title" value="{$quizz.title}">
 	<div class="col-md-4 col-md-offset-1">
 		<div class="question">
-			<h2>Quizz n°{$quizz.id}</h2>
 			<h2>{$quizz.title}</h2>
 		</div>
 		<div class="adminEdit">

@@ -47,7 +47,7 @@
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

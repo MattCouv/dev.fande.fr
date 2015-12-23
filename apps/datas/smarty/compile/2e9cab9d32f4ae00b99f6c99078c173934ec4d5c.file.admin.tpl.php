@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 12:41:30
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 12:59:23
          compiled from "apps\templates\admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:265745679333a0c5f97-67664519%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -90,7 +90,7 @@ quizz" class="btn btn-primary btn-lg btn-block">Editer les Quizzs</a>
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

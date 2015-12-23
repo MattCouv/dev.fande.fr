@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 12:41:34
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 12:57:48
          compiled from "apps\templates\quizz.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12805675434b9ce690-59733451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
     array (
       0 => 'apps\\templates\\quizz.tpl',
-      1 => 1450729451,
+      1 => 1450871865,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -99,8 +99,6 @@ $_smarty_tpl->tpl_vars['quizz']->_loop = true;
 ">
 	<div class="col-md-4 col-md-offset-1">
 		<div class="question">
-			<h2>Quizz n°<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-</h2>
 			<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
 </h2>
 		</div>
@@ -135,7 +133,7 @@ quizz-play" class="btn btn-default">Jouer</button>
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

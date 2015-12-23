@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-20 01:22:51
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 13:08:33
          compiled from "apps\templates\delete.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:314465675f0847d73c4-38673041%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450531541,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -60,10 +60,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<li><a href="<?php echo @constant('ROOT');?>
 filmo">Filmographie</a></li>
 					<li><a href="<?php echo @constant('ROOT');?>
-biblio">Bibliographie</a></li>
-					<li><a href="<?php echo @constant('ROOT');?>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+						<li><a href="<?php echo @constant('ROOT');?>
+admin-page">Administration</a></li>
 						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
@@ -106,7 +106,7 @@ filmo"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

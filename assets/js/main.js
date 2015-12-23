@@ -5,10 +5,12 @@ $click.click(function(){
 	$(this).siblings(".fullDesc").toggleClass("hidden");
 });
 
-var $nav = $(".nav");
-
-/*$nav.find;*/
-
+var $nav = $(".nav"),
+	$li =$nav.find('li');
+$li.click(function(){
+	$(this).siblings('.active').removeClass("active");
+	$(this).addClass("active");
+});
 var options = {
 	bg: '#ffc715'
 };

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-21 23:58:16
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 12:58:37
          compiled from "apps\templates\question.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19594567857067e7f99-03536421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa1a8993216ec40ac6f0383885b30e47923b26fc' => 
     array (
       0 => 'apps\\templates\\question.tpl',
-      1 => 1450736276,
+      1 => 1450871915,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450724735,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -63,6 +63,8 @@ filmo">Filmographie</a></li>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 						<li><a href="<?php echo @constant('ROOT');?>
+admin-page">Administration</a></li>
+						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>
@@ -81,7 +83,7 @@ admin-login">Login</a></li>
 <section class="quizzContainer">
 
 	<div class="quizzHeader">
-		<h2>Quizz n°<?php echo $_POST['id'];?>
+		<h2><?php echo $_POST['title'];?>
 </h2>
 	</div>
 	<div class="quizzQuestionContainer">
@@ -94,14 +96,15 @@ $_smarty_tpl->tpl_vars['question']->_loop = true;
 				<h2><?php echo $_smarty_tpl->tpl_vars['question']->value['TextQ'];?>
 </h2>
 				<?php  $_smarty_tpl->tpl_vars['answer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['answer']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['answers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['answers']->value[$_smarty_tpl->tpl_vars['question']->value['id']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['answer']->key => $_smarty_tpl->tpl_vars['answer']->value) {
 $_smarty_tpl->tpl_vars['answer']->_loop = true;
 ?>
-				<p><?php echo $_smarty_tpl->tpl_vars['answer']->value['TextA'];?>
+				<p><input type="radio"><?php echo $_smarty_tpl->tpl_vars['answer']->value['textA'];?>
 </p>
 				<?php } ?>
 			<?php } ?>
+			<button type="submit">Valider</button>
 		</form>
 	</div>
 </section>
@@ -110,7 +113,7 @@ $_smarty_tpl->tpl_vars['answer']->_loop = true;
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 

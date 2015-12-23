@@ -2,7 +2,9 @@
 // Affiche la page d'acceuil
 
 function home_action() {
- global $smarty;
+ global $smarty,$fpdo;
+	$oMovie = new Movie( $fpdo );
+	$smarty->assign('films', $oMovie->getAll() );
    // affichage
  $smarty->display('home.tpl');
 }
@@ -33,17 +35,14 @@ function quizzplay_action($id_quizz){
 	$oQuestion = new Question($fpdo);
 	$oAnswers = new Answers($fpdo);
 	$param_quizzID=["where"=>["id_quizz"=>$id_quizz]];
-	$question=$oQuestion->getAll($param_quizzID);
-	debug($question,'question');
-	$answer=[];
-	foreach ($question as $key => $value) {
-		if($key=='id'){
-			$param_questionID=["where"=>["id_question"=>$value]];
-			array_push($answer, $oAnswers->getAll($param_questionID));
-		}
+	$questions=$oQuestion->getAll($param_quizzID);
+	$answers=[];
+	foreach ($questions as $question) {
+			$param_questionID=["where"=>["id_question"=>$question["id"]]];
+			$answers[$question["id"]]=$oAnswers->getAll($param_questionID);
 	}
-	debug($answer,'answer');
-	$smarty->assign('questions', $question);
+	$smarty->assign('questions', $questions);
+	$smarty->assign('answers', $answers);
 	//affichage
 	$smarty->display('question.tpl');
 }
@@ -73,7 +72,7 @@ function deletefilm_action($id,$image){
         $oMovie = new Movie( $fpdo );
 		$oMovie->delete($id);
 		deleteImage($image);
-		/*redirect('filmo');*/
+		redirect('filmo');
     }
 }
 function addfilm_action(){

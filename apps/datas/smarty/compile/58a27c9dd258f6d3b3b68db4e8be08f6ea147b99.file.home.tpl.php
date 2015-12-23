@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 14:06:16
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 14:31:08
          compiled from "apps\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23933566fbf7fe1ea01-07125248%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58a27c9dd258f6d3b3b68db4e8be08f6ea147b99' => 
     array (
       0 => 'apps\\templates\\home.tpl',
-      1 => 1448815748,
+      1 => 1450877466,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450784477,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  <title>Martin SCORSESE</title>
+	  <title>Michael BAY</title>
 	  <meta name="viewport" content="initial-scale=1.0">
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -82,29 +82,25 @@ admin-login">Login</a></li>
 	<div id="welcome">
 		<div class="top">
 			<div id="home_slideshow" class="aslider" data-hide-controls>
-				<div class="aslide" data-duration="2">
-					<img src="assets/img/films/casino.jpg" alt="Gang of New York xxx - 3000 -" />
+			<?php  $_smarty_tpl->tpl_vars['film'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['film']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['films']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['film']->key => $_smarty_tpl->tpl_vars['film']->value) {
+$_smarty_tpl->tpl_vars['film']->_loop = true;
+?>
+				<div class="aslide" data-duration="3">
+					<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+" />
 				</div>
-				<div class="aslide" data-duration="2">
-					<img src="assets/img/films/casino.jpg" alt="Shutter Island - 2010 -" />
-				</div>
-				<div class="aslide" data-duration="2">
-					<img src="assets/img/films/casino.jpg" alt="Casino - 1995 -" />
-				</div>
-				<div class="aslide" data-duration="2">
-					<img src="assets/img/films/lesaffranchis.jpg" alt="Les affranchis - 1990 -" />
-				</div>
-				<div class="aslide" data-duration="2">
-					<img src="assets/img/films/ragingbull.jpg" alt="Raging Bull - 1980 -" />
-				</div>
+			<?php } ?>
 			</div>
-			<p class="title">Fan de ... <span class="biggest">Martin SCORSESE</span></p>
+			<p class="title">Fan de ... <span class="biggest">Michael BAY</span></p>
 		</div>
 		<div class="main">
 		</hr>
-			<p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus blandit arcu a sagittis. Suspendisse nisi erat, accumsan vel mattis non, rhoncus sit amet turpis. Vestibulum erat arcu, porta eget cursus eu, posuere congue elit. Fusce dolor diam, luctus non molestie quis, maximus a sapien. Nullam felis neque, sodales in vulputate at, accumsan et nulla. Maecenas accumsan rhoncus orci, euismod efficitur tortor lacinia sed. Etiam risus quam, pellentesque vitae eros eu, malesuada congue tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed dignissim molestie ex, in mollis velit elementum vel. Pellentesque pellentesque dolor ac arcu porttitor auctor. Nulla a enim ut nulla condimentum rhoncus consectetur vitae nisi. Sed in semper nisi. Nullam quis diam ligula. Nam mollis dictum eros id pharetra.
+			<p class="intro">Michael Benjamin Bay (né le 17 février 1965) est un réalisateur et producteur américain. Il est surtout connu pour avoir réalisé des films d'action et catastrophe avec un gros budget, caractérisés par leur utilisation massive d'effets spéciaux. Ses films, qui comprennent Bad Boys, Armageddon, Pearl Harbor, et Transformers, ont rapporté plus de quatre milliards de dollars dans le monde entier et ce malgré les critiques de cinéma hostiles à Bay. Il est cofondateur de la maison de production commerciale de l'Institut, alias The Institute for the Development of Enhanced Perceptual Awareness. Il est le cofondateur et copropriétaire de la maison d'effets spéciaux Digital Domain. Il est copropriétaire de Platinum Dunes, une maison de production qui a servi a réamorcer des films d'horreur cultes comme Vendredi 13, Massacre à la tronçonneuse et Freddy : Les Griffes de la nuit.
 			</p>
-			<a class="btn btn-primary btn-lg discover">Découvrir ...</a>
+			<a href="filmo"class="btn btn-primary btn-lg discover">Découvrir ...</a>
 		</div>
 	</div>
 
@@ -112,7 +108,7 @@ admin-login">Login</a></li>
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 
