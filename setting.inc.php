@@ -11,7 +11,7 @@ include ('apps/libs/smarty/Smarty.class.php');
 include ('apps/libs/FluentPDO/FluentPDO.php'); // << en commentaire pour le début du TD
 include ('apps/libs/functions.php');
 include ('apps/libs/controllers.php');
-
+include ('apps/libs/quizzController.php');
 // ces 3 classes modèles qui permettent une approche objet de la base de données seront
 //intégrées dans la partie Application2 du TD.
 include ('apps/models/base.class.php');

@@ -11,8 +11,7 @@
 	{foreach from=$quizzs item=quizz}
 	<section class="row">
 	<form method="post">
-	<input type="hidden" name="id" value="{$quizz.id}">
-	<input type="hidden" name="title" value="{$quizz.title}">
+	<input type="hidden" name="quizztitle" value="{$quizz.title}">
 	<div class="col-md-4 col-md-offset-1">
 		<div class="question">
 			<h2>{$quizz.title}</h2>
@@ -31,10 +30,11 @@
 		</div>
 	</div>
 	<div class="col-md-5">
-		<p>{$quizz.description}</p><button type="submit" formaction="{$smarty.const.ROOT}quizz-play" class="btn btn-default">Jouer</button>
+		<button type="submit" formaction="{$smarty.const.ROOT}quizz?quizz={$quizz.id}" class="btn btn-default">Jouer</button>
 	</div>
 	</form>
-	</section>
+	
+	</section><hr>
 	{/foreach}
 
 

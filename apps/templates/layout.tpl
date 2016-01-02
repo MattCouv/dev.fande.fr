@@ -57,6 +57,7 @@
 <script src="assets/js/vendor/transition.js"></script>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
+{block name=quizzJs}{/block}
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>

@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-31 18:53:27
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-24 12:49:41
          compiled from "apps\templates\quizz.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13714567bdbdc62c273-63505901%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12805675434b9ce690-59733451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
     array (
       0 => 'apps\\templates\\quizz.tpl',
-      1 => 1451584405,
+      1 => 1450957744,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1451062441,
+      1 => 1450870495,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13714567bdbdc62c273-63505901',
+  'nocache_hash' => '12805675434b9ce690-59733451',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_567bdbdc68ddb9_46061786',
+  'unifunc' => 'content_5675434bf245b0_92623531',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_567bdbdc68ddb9_46061786')) {function content_567bdbdc68ddb9_46061786($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5675434bf245b0_92623531')) {function content_5675434bf245b0_92623531($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -93,7 +93,9 @@ $_smarty_tpl->tpl_vars['quizz']->_loop = true;
 ?>
 	<section class="row">
 	<form method="post">
-	<input type="hidden" name="quizztitle" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
+	<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
+">
+	<input type="hidden" name="title" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
 ">
 	<div class="col-md-4 col-md-offset-1">
 		<div class="question">
@@ -116,13 +118,12 @@ edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-h
 		</div>
 	</div>
 	<div class="col-md-5">
-		<button type="submit" formaction="<?php echo @constant('ROOT');?>
-quizz?quizz=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-" class="btn btn-default">Jouer</button>
+		<p><?php echo $_smarty_tpl->tpl_vars['quizz']->value['description'];?>
+</p><button type="submit" formaction="<?php echo @constant('ROOT');?>
+quizz-question" class="btn btn-default">Jouer</button>
 	</div>
 	</form>
-	
-	</section><hr>
+	</section>
 	<?php } ?>
 
 
@@ -142,7 +143,6 @@ quizz?quizz=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
 <script src="assets/js/vendor/transition.js"></script>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
-
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>

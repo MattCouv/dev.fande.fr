@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-22 12:37:55
+<?php /* Smarty version Smarty-3.1.18, created on 2016-01-01 15:14:06
          compiled from "apps\templates\error.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:560856793613456b55-23155996%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e567caa3e687c23094c415b256401c3f627c1a05' => 
     array (
       0 => 'apps\\templates\\error.tpl',
-      1 => 1450162733,
+      1 => 1451657644,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450724735,
+      1 => 1451062441,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_56793613498803_95834244',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_56793613498803_95834244')) {function content_56793613498803_95834244($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
@@ -63,6 +63,8 @@ filmo">Filmographie</a></li>
 quizz">Le QUIZZ</a></li>
 					<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 						<li><a href="<?php echo @constant('ROOT');?>
+admin-page">Administration</a></li>
+						<li><a href="<?php echo @constant('ROOT');?>
 logout">
 							<span class="glyphicon glyphicon-lock"  aria-hidden="true"></span>
   						</a></li>
@@ -78,7 +80,7 @@ admin-login">Login</a></li>
   
 	<div id="error">
 	<div class="errorDel">
-		<h1>Oups une error c'est produite lors de l'envoie de l'image.</h1>
+		<h1>Oups une error c'est produite.</h1>
 		<a href="<?php echo @constant('ROOT');?>
 filmo">Veuillez réessayer</a>
 	</div>
@@ -87,7 +89,7 @@ filmo">Veuillez réessayer</a>
 
 
 	<div class="footer">
-		<p>Projet MMI 2015-2016 - Fan de Martin SCORSESE.</p>
+		<p>Projet MMI 2015-2016 - Fan de Michael Bay.</p>
 	</div>
 
 
@@ -97,6 +99,7 @@ filmo">Veuillez réessayer</a>
 <script src="assets/js/vendor/transition.js"></script>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
+
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>

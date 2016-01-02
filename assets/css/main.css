@@ -14,7 +14,7 @@ body{
 	font-family: Lato;
 	position:relative;
 }
-#welcome,#filmo,#addFilm,#delete,#error,#login,#quizzs,#admin{
+#welcome,#filmo,#addFilm,#delete,#error,#login,#quizzs,#admin,#addQuizz{
 	padding-top: 50px;
 	padding-bottom: 50px;
 }

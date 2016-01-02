@@ -18,12 +18,26 @@ elseif ('filmo' == $command){
 }
 // afficher la page de filmographie
 elseif ('quizz' == $command){
-	quizz_action();
+	if (empty($_GET)) {
+    	quizz_action();
+	}else{
+		quizzquestion_action($_GET['quizz']);
+	}
 }
-//affiche le quizz
-elseif ('quizz-play' == $command && isset( $_POST['id'] )){
-	//afficher un billet
-	quizzplay_action($_POST['id']);
+//affichage de la page d'ajout de quizz
+elseif ('add-quizz' == $command && $_SESSION['admin']) {
+	addquizz_action();
+}
+elseif('save-quizz'==$command && isset( $_POST ) && $_SESSION['admin']){
+	if(!empty($_POST['title'])){
+		addquizzsave_action($_POST);
+	}
+	else{
+		redirect('error');
+	}
+}
+elseif('quizz-question'==$command && isset( $_POST) && isset( $_GET)){
+	quizzquestion_action($_GET["quizz"]);
 }
 //affiche la page d'édition du quizz
 elseif ('edit-quizz' == $command && $_SESSION['admin']) {
@@ -59,8 +73,7 @@ elseif ('login-check' == $command && isset( $_POST['admin_name'] ) && isset( $_P
 		$_SESSION['admin'] = true;
 	}else{
 		// si ça ne fonctionne pas redirestionne vers admin login
-		debug($_SESSION['login'],'session');
-		/*redirect('admin-login');*/
+		redirect('admin-login');
 	}
 }
 //Permet de ce déconnecté de la session et la détruire

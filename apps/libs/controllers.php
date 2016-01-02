@@ -21,37 +21,14 @@ function filmo_action(){
 }
 //Affiche la page de la filmographie
 
-function quizz_action(){
-	global $smarty,$fpdo;
-	$oQuizz = new Quizz( $fpdo );
-	$quizzs = $oQuizz->getAll();
-	$smarty->assign('quizzs', $quizzs );
-	//Affichage
-	$smarty->display('quizz.tpl');
-}
-//display the questions of a quizz
-function quizzplay_action($id_quizz){
-	global $smarty,$fpdo;
-	$oQuestion = new Question($fpdo);
-	$oAnswers = new Answers($fpdo);
-	$param_quizzID=["where"=>["id_quizz"=>$id_quizz]];
-	$questions=$oQuestion->getAll($param_quizzID);
-	$answers=[];
-	foreach ($questions as $question) {
-			$param_questionID=["where"=>["id_question"=>$question["id"]]];
-			$answers[$question["id"]]=$oAnswers->getAll($param_questionID);
-	}
-	$smarty->assign('questions', $questions);
-	$smarty->assign('answers', $answers);
-	//affichage
-	$smarty->display('question.tpl');
-}
+
 //affiche le page de login de l'admin
 function login_action(){
 	global $smarty;
 	//affichage
 	$smarty->display('login.tpl');
 }
+//affiche la page d'administration de l'admin
 function adminpage_action(){
 	global $smarty;
 	$smarty->display('admin.tpl');
@@ -75,16 +52,19 @@ function deletefilm_action($id,$image){
 		redirect('filmo');
     }
 }
+//affiche la page pour ajouter des films
 function addfilm_action(){
 	global $smarty;
 
 	$smarty->display('manage.tpl');
 }
+//affiche la page d'error si il y a une erreur au téléchargement de l'image
 function error_action(){
 	global $smarty;
 
 	$smarty->display('error.tpl');
 }
+//action qui sauvegarde le nouveau film dans la base de donnée
 function addfilmsave_action($data, $file){
 	global $smarty, $fpdo;
 	$oMovie = new Movie( $fpdo );
@@ -129,6 +109,7 @@ function editfilmsave_action($data, $file){
 		return $err;
 	}
 }
+//affichage de l'erreur 404
 function error404_action(){
 	global $smarty;
 	$smarty->display('error404.tpl');

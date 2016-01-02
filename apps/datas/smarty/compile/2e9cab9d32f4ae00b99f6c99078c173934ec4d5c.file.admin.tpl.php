@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-12-23 12:59:23
+<?php /* Smarty version Smarty-3.1.18, created on 2015-12-31 18:08:00
          compiled from "apps\templates\admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:265745679333a0c5f97-67664519%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
     array (
       0 => 'apps\\templates\\layout.tpl',
-      1 => 1450870495,
+      1 => 1451062441,
       2 => 'file',
     ),
   ),
@@ -100,6 +100,7 @@ quizz" class="btn btn-primary btn-lg btn-block">Editer les Quizzs</a>
 <script src="assets/js/vendor/transition.js"></script>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
+
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
 <script src="assets/js/vendor/nanobar.js"></script>
