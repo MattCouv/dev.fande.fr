@@ -21,7 +21,7 @@
 			<table>
 			<tbody>
 				<tr>
-					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-quizz" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
+					<td><button type="submit" formaction="{$smarty.const.ROOT}delete-quizz" name="id_quizz" value="{$quizz.id}" formmethod='get' class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
 					<td><button type="submit" formaction="{$smarty.const.ROOT}edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
 				</tr>
 			</tbody>

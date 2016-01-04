@@ -30,25 +30,55 @@ function addquizz_action(){
 	global $smarty,$fpdo;
 	$smarty->display('add-quizz.tpl');
 }
+function deletequizz_action()
+{
+	global $smarty;
+	$smarty->display('deleteQuizz.tpl');
+}
+function deletequizzsave_action()
+{
+	global $fpdo;
+	$id_quizz=$_GET['id'];
+	$oQuizz = new Quizz( $fpdo );
+	$oQuestion = new Question($fpdo);
+	$oAnswers = new Answers($fpdo);
+	$oQuizz->delete($id_quizz);
+	$questions=$oQuestion->getQ($id_quizz);
+	foreach ($questions as $question) {
+		$oAnswers->delA($question['id']);
+	}
+	$oQuestion->delQ($id_quizz);
+}
+
 function addquizzsave_action($post)
 {
-
 	global $fpdo,$pdo;
-	debug($post,'post');
 	$title=['title'=>$post['title']];
 	$questions=$post['questions'];
-	debug($questions,'questions');
 
 	$oQuizz = new Quizz( $fpdo );
-	$id_quizz =$oQuizz->add($title);
-
 	$oQuestion = new Question($fpdo);
-	$id_questionA=[];
-	foreach ($questions as $TextQ) {
-		$paramQ=['TextQ'=>$TextQ,'id_quizz'=>$id_quizz];
+	$oAnswers = new Answers($fpdo);
+	/*recuperation de l'identifiant du quizz*/
+	$id_quizz =$oQuizz->add($title);
+	/*iteration de chaque questions du quizz*/
+	foreach ($questions as $question) {
+		/*configuration de param de la question a ajouter*/
+		$paramQ=['TextQ'=>$question['TextQ'],'id_quizz'=>$id_quizz];
+		/*recuparation de l'indentifiant de la question*/
 		$id_question=$oQuestion->add($paramQ);
-		$id_questionA[$id_question]=$id_question;
+		/*iteration de chaque reponses de chaque questions*/
+		foreach ($question as $answer) {
+			/*si il y a bien un parametre $answer['textA']*/
+			if (isset($answer['textA'])) {
+				if (is_null($answer['good'])) {
+					$paramA=['textA'=>$answer['textA'],'good'=>0,'id_question'=>$id_question];
+				}else{
+					$paramA=['textA'=>$answer['textA'],'good'=>1,'id_question'=>$id_question];
+				}
+				$oAnswers->add($paramA);
+			}
+		}
 	}
-	debug($id_questionA,'id_question');
 }
 ?>

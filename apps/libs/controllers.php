@@ -19,8 +19,6 @@ function filmo_action(){
 	//Affichage
 	$smarty->display('filmo.tpl');
 }
-//Affiche la page de la filmographie
-
 
 //affiche le page de login de l'admin
 function login_action(){

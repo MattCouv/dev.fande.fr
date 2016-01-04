@@ -174,6 +174,10 @@ table,td{
 #quizzs{
 	background: #ccc;
 }
+#addQuizz{
+	max-width: 960px;
+	margin:0 auto;
+}
 .quizzRow{
 	width: 100%;
 	padding:50px;

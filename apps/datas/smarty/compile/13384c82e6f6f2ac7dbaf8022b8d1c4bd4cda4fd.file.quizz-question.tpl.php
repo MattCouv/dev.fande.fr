@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 17:07:24
-         compiled from "apps\templates\quizz.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29192568793d1160174-57432506%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 16:10:06
+         compiled from "apps\templates\quizz-question.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:261895687e84e975a53-12006797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
+    '13384c82e6f6f2ac7dbaf8022b8d1c4bd4cda4fd' => 
     array (
-      0 => 'apps\\templates\\quizz.tpl',
-      1 => 1451750728,
+      0 => 'apps\\templates\\quizz-question.tpl',
+      1 => 1451732854,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29192568793d1160174-57432506',
+  'nocache_hash' => '261895687e84e975a53-12006797',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_568793d11ba7d5_63166990',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5687e84e9c8e58_89619582',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_568793d11ba7d5_63166990')) {function content_568793d11ba7d5_63166990($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5687e84e9c8e58_89619582')) {function content_5687e84e9c8e58_89619582($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  <title>Fan de Filmographie</title>
+	  <title>Fan de Quizz</title>
 	  <meta name="viewport" content="initial-scale=1.0">
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -98,55 +98,41 @@ admin-login">Login</a></li>
   
 
 <div id="quizzs" class="container-fluid">
-<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-<div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
-add-quizz" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un quizz</div>
-<?php }?>
+<section class="quizzContainer">
 
-
-	<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['quizzs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['quizz']->key => $_smarty_tpl->tpl_vars['quizz']->value) {
-$_smarty_tpl->tpl_vars['quizz']->_loop = true;
-?>
-	<section class="row">
-	<form method="post">
-	<input type="hidden" name="quizztitle" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
-">
-	<div class="col-md-4 col-md-offset-1">
-		<div class="question">
-			<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
+	<div class="quizzHeader">
+		<h2><?php echo $_POST['quizztitle'];?>
 </h2>
-		</div>
-		<div class="adminEdit">
-		<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-			<table>
-			<tbody>
-				<tr>
-					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-quizz" name="id_quizz" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-" formmethod='get' class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
-					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
-				</tr>
-			</tbody>
-			</table>
-		<?php }?>
-		</div>
 	</div>
-	<div class="col-md-5">
-		<button type="submit" formaction="<?php echo @constant('ROOT');?>
-quizz?quizz=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-" class="btn btn-default">Jouer</button>
-	</div>
+	<div class="quizzQuestionContainer">
+	<form action=""method="post">
+		<input type="hidden" name="questionSize" value="<?php echo $_smarty_tpl->tpl_vars['questionSize']->value;?>
+">
+		<?php  $_smarty_tpl->tpl_vars['question'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['question']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['questions']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['question']->key => $_smarty_tpl->tpl_vars['question']->value) {
+$_smarty_tpl->tpl_vars['question']->_loop = true;
+?>
+		<h2 id="TextQ"><?php echo $_smarty_tpl->tpl_vars['question']->value['TextQ'];?>
+</h2>
+		<div class="question">
+			<?php  $_smarty_tpl->tpl_vars['answer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['answer']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['answers']->value[$_smarty_tpl->tpl_vars['question']->value['id']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['answer']->key => $_smarty_tpl->tpl_vars['answer']->value) {
+$_smarty_tpl->tpl_vars['answer']->_loop = true;
+?>
+			<p><label><input class="answer" type='radio' name='answer<?php echo $_smarty_tpl->tpl_vars['question']->value['id'];?>
+' value='<?php echo $_smarty_tpl->tpl_vars['answer']->value['good'];?>
+'><?php echo $_smarty_tpl->tpl_vars['answer']->value['textA'];?>
+</label></p>
+			<?php } ?>
+		</div>
+		<?php } ?>
 	</form>
-	
-	</section><hr>
-	<?php } ?>
-
-
+	<button id="submit">Envoyer</button>
+	</div>
+</section>
 </div>
-
 
 
 
@@ -161,6 +147,8 @@ quizz?quizz=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
 <script src="assets/js/vendor/transition.js"></script>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
+
+<script src="assets/js/scorequizz.js"></script>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>

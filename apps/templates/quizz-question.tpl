@@ -26,5 +26,5 @@
 </div>
 {/block}
 {block name=quizzJs}
-<script src="assets/js/quizz.js"></script>
+<script src="assets/js/scorequizz.js"></script>
 {/block}

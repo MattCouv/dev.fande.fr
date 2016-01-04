@@ -30,7 +30,14 @@ elseif ('add-quizz' == $command && $_SESSION['admin']) {
 }
 elseif('save-quizz'==$command && isset( $_POST ) && $_SESSION['admin']){
 	if(!empty($_POST['title'])){
-		addquizzsave_action($_POST);
+		if(!empty($_POST['questions'])){
+			debug($_POST,'post');
+			addquizzsave_action($_POST);
+			redirect('quizz');
+		}
+		else{
+			redirect('error');
+		}
 	}
 	else{
 		redirect('error');
@@ -42,6 +49,13 @@ elseif('quizz-question'==$command && isset( $_POST) && isset( $_GET)){
 //affiche la page d'édition du quizz
 elseif ('edit-quizz' == $command && $_SESSION['admin']) {
 	editquizz_action();
+}
+elseif ('delete-quizz' == $command && $_SESSION['admin']) {
+	deletequizz_action();
+}
+elseif ('deletesave'== $command && $_SESSION['admin']) {
+	deletequizzsave_action();
+	redirect('quizz');
 }
 //affiche la page de login de l'admin
 elseif ('admin-login' == $command){

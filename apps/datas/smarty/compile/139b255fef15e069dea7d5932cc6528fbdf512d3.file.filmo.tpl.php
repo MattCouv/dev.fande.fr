@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 17:07:24
-         compiled from "apps\templates\quizz.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29192568793d1160174-57432506%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 16:36:32
+         compiled from "apps\templates\filmo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:55175687ee803cc571-01925494%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '0c0f21c4e79e02913f181b7516d0ea0541e73b28' => 
+    '139b255fef15e069dea7d5932cc6528fbdf512d3' => 
     array (
-      0 => 'apps\\templates\\quizz.tpl',
-      1 => 1451750728,
+      0 => 'apps\\templates\\filmo.tpl',
+      1 => 1450872295,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29192568793d1160174-57432506',
+  'nocache_hash' => '55175687ee803cc571-01925494',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_568793d11ba7d5_63166990',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5687ee8043e727_04840548',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_568793d11ba7d5_63166990')) {function content_568793d11ba7d5_63166990($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5687ee8043e727_04840548')) {function content_5687ee8043e727_04840548($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
@@ -97,54 +97,76 @@ admin-login">Login</a></li>
 	</nav>
   
 
-<div id="quizzs" class="container-fluid">
+<div id="filmo"  class="container-fluid">
 <?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
 <div class="adminEdit"><a href="<?php echo @constant('ROOT');?>
-add-quizz" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un quizz</div>
+add-film" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>Ajouter un film</div>
 <?php }?>
-
-
-	<?php  $_smarty_tpl->tpl_vars['quizz'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['quizz']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['quizzs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['quizz']->key => $_smarty_tpl->tpl_vars['quizz']->value) {
-$_smarty_tpl->tpl_vars['quizz']->_loop = true;
+<?php  $_smarty_tpl->tpl_vars['film'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['film']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['films']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['film']->key => $_smarty_tpl->tpl_vars['film']->value) {
+$_smarty_tpl->tpl_vars['film']->_loop = true;
 ?>
-	<section class="row">
-	<form method="post">
-	<input type="hidden" name="quizztitle" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
+<hr>
+	<section class="film">
+	<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
+		<div class="adminEdit container-fluid">
+		<form>
+		<input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
 ">
-	<div class="col-md-4 col-md-offset-1">
-		<div class="question">
-			<h2><?php echo $_smarty_tpl->tpl_vars['quizz']->value['title'];?>
-</h2>
-		</div>
-		<div class="adminEdit">
-		<?php if (isset($_SESSION['admin'])&&$_SESSION['admin']) {?>
-			<table>
+		<input type="hidden"name="poster" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+">
+		<table>
 			<tbody>
 				<tr>
 					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-delete-quizz" name="id_quizz" value="<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-" formmethod='get' class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le quizz</td>
+delete-film" formmethod="get" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> Eliminer le film</td>
 					<td><button type="submit" formaction="<?php echo @constant('ROOT');?>
-edit-quizz"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le quizz</td>
+edit-film"class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> Editer le film</td>
 				</tr>
 			</tbody>
-			</table>
-		<?php }?>
+		</table>
+		</form>
+		</div>
+	<?php }?>
+		<div class="row">
+		<div class="year col-xs-2 col-md-1">
+			<p ><h1 class="vertical-text"><?php echo $_smarty_tpl->tpl_vars['film']->value['year'];?>
+</h1></p>
+		</div>
+		<div class="poster col-xs-10 col-md-5">
+			<img src="assets/img/films/<?php echo $_smarty_tpl->tpl_vars['film']->value['poster'];?>
+" class="img-polaroid"/>
+			<div>
+				<p>[<span class="rate"><?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
+</span>/5]</p>
+				<input type="range" min="0" max="5" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['rates'];?>
+" step="1" id="rate<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" name="r" />
+				<input type="hidden" name="idmovie" value="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" />
+				<div class="rateit" data-rateit-idmovie="<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+" data-rateit-backingfld="#rate<?php echo $_smarty_tpl->tpl_vars['film']->value['id'];?>
+"></div>
+			</div>
+			
+		</div>
+		<div class="infos col-xs-12 col-md-6">
+			<p class="title"><?php echo $_smarty_tpl->tpl_vars['film']->value['title'];?>
+</p>
+			<hr>
+			<p class="description show cat70">
+			<?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],0,70);?>
+
+			<span class="hidden fullDesc"><?php echo substr($_smarty_tpl->tpl_vars['film']->value['shortdesc'],70,5000);?>
+</span>
+			<span class="click btn btn-default">...</span>
+			</p>
 		</div>
 	</div>
-	<div class="col-md-5">
-		<button type="submit" formaction="<?php echo @constant('ROOT');?>
-quizz?quizz=<?php echo $_smarty_tpl->tpl_vars['quizz']->value['id'];?>
-" class="btn btn-default">Jouer</button>
-	</div>
-	</form>
-	
-	</section><hr>
+	</section>
+
 	<?php } ?>
-
-
 </div>
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 10:09:38
+<?php /* Smarty version Smarty-3.1.18, created on 2016-01-02 15:53:03
          compiled from "apps\templates\add-quizz.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10119568793d2d1b965-19365289%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '89f1682a954c20e10b3880f619574672f440c94b' => 
     array (
       0 => 'apps\\templates\\add-quizz.tpl',
-      1 => 1451680714,
+      1 => 1451746358,
       2 => 'file',
     ),
     '58c18a15a0834003006d3aa17db8045e0c959e4c' => 
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_568793d2d650e8_13479157',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_568793d2d650e8_13479157')) {function content_568793d2d650e8_13479157($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
@@ -99,17 +99,17 @@ admin-login">Login</a></li>
 <div id="addQuizz">
 	<div class="quizzEdit">
 	<form method="post" action="save-quizz">
-		<label>Quizz <input type="text" name="title"></label>
+		<div class='form-group'><label>Titre du Quizz</label><input type="text" name="title"class='form-control'></div>
 		<div id="questionContainer">
-			<div data-question='1' class="question">Question 1 <input type="text" name="questions[1][TextQ]">
-				<ul class="reponse">
-					<li data-answer='1'>Réponse 1 <input type='text' name='questions[1][1][textA]'></li>
+			<div data-question='1' class='question'><label>Question 1 </label><input type='text' name='questions[1][TextQ]'class='form-control'>
+				<ul class='reponse'>
+					<li data-answer='1' class='form-inline'><label>Réponse 1 </label><input type='text' name='questions[1][1][textA]'class='form-control'><input type='checkbox' name='questions[1][1][good]' class='checkbox'><-bonne réponse ?</li>
 				</ul>
 				<a href='#' class='btn btn-default addA'>Ajouter une réponse</a>
 			</div>
 		</div>
 		<a href="#" id="addQ"class='btn btn-default'>Ajouter une question</a>
-		<button>Ajouter un quizz</button>
+		<button class='btn btn-success'>Ajouter un quizz</button>
 	</form>
 	</div>
 </div>
@@ -128,7 +128,7 @@ admin-login">Login</a></li>
 <script src="assets/js/vendor/collapse.js"></script>
 <script src="assets/js/vendor/dropdown.js"></script>
 
-<script src="assets/js/quizz.js"></script>
+<script src="assets/js/addquizz.js"></script>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/vendor/aslider.js"></script>
